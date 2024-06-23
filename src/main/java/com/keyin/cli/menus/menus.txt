@@ -1,0 +1,82 @@
+Menu Directory:
+
+Flight Reservation System
+  - View All Flights
+  - Search Flights
+      - Search Flights by ID
+      - Search Flights by Airports
+        - Search Flights by Origin Airport
+        - Search Flights by Destination Airport
+      - Search Flights by Date
+        - Search Flights by Departure Date
+        - Search Flights by Arrival Date
+      - Search Flights by Aircraft
+      - Search Flights by Status
+  - Add Flight
+  - Edit Flight
+  - Delete Flight
+  - Manage Seating Chart/Bookings for Flight by ID
+    - View Seating Chart
+    - Search Seating Chart by Seat Number
+    - Search Seating Chart by Passenger ID
+    - Add Passenger to Seating Chart
+    - Edit Passenger in Seating Chart
+    - Delete Passenger from Seating Chart
+    - Randomly Assign Passenger to Seating Chart
+
+Booking Reservation System
+  - View All Bookings
+  - Search Bookings
+    - Search Bookings by ID
+    - Search Bookings by Flight ID
+    - Search Bookings by Passenger ID
+    - Search Bookings by Seat Number
+    - Search Bookings by Status
+  - Add Booking
+    - Add Booking by Flight ID
+    - Add Booking by Passenger ID
+    - Add Booking by Seat Number
+      - Choose Seat Number
+      - Randomly Assign Seat Number
+  - Edit Booking
+  - Delete Booking
+
+Passenger Management System
+  - View All Passengers
+  - Search Passenger by ID
+  - Search Passenger by First Name
+  - Search Passenger by Last Name
+  - Search Passenger by Email
+  - Add Passenger
+  - Edit Passenger
+  - Delete Passenger
+
+Aircraft System
+    - View All Aircraft
+    - Search Aircraft by ID
+    - Search Aircraft by Model
+    - Search Aircraft by Capacity
+    - Add Aircraft
+    - Edit Aircraft
+    - Delete Aircraft
+
+Airport System
+  - View All Airports
+  - Search Airport by ID
+  - Search Airport by Code
+  - Search Airport by Name
+  - Search Airport by City
+  - Search Airport by Province
+  - Add Airport
+  - Edit Airport
+  - Delete Airport
+
+Report Generation System
+  - Generate Airport Report
+  - Generate Aircraft Report
+  - Generate Flight Report
+  - Generate Booking Report
+  - Generate Passenger Report
+  - Generate Seating Chart Report
+
+Exit
