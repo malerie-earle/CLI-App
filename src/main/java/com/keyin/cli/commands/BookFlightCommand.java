@@ -1,7 +1,7 @@
 package com.keyin.cli.commands;
 
+import com.keyin.cli.Command;
 import com.keyin.cli.api.APIClient;
-
 import java.io.IOException;
 
 public class BookFlightCommand implements Command {
@@ -15,9 +15,8 @@ public class BookFlightCommand implements Command {
     public void execute() {
         long flightId = InputReader.readInt("Enter flight ID: ");
         long passengerId = InputReader.readInt("Enter passenger ID: ");
-        String seatClass = InputReader.readString("Enter seat class: ");
         try {
-            String response = apiClient.bookFlight(flightId, passengerId, seatClass);
+            String response = apiClient.bookFlight(flightId, passengerId);
             System.out.println("Booking response: " + response);
         } catch (IOException e) {
             System.err.println("Error booking flight: " + e.getMessage());
