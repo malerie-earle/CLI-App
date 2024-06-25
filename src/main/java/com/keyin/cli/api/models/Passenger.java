@@ -1,49 +1,42 @@
-package com.keyin.rest.passenger; // Assuming this is the correct package
+package com.keyin.cli.api.models;
 
 public class Passenger {
-    private long passengerId;
-    private String firstName;
-    private String lastName;
+    private long passenger_ID;
+    private String first_name;
+    private String last_name;
     private String email;
-    private String phoneNumber;
 
-    // Constructors, getters, setters, toString, etc.
 
-    // Example constructors
-    public Passenger() {
-    }
-
-    public Passenger(long passengerId, String firstName, String lastName, String email, String phoneNumber) {
-        this.passengerId = passengerId;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Passenger(long passenger_ID, String first_name, String last_name, String email, String phone_number) {
+        this.passenger_ID = passenger_ID;
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.email = email;
-        this.phoneNumber = phoneNumber;
     }
 
-    // Getters and Setters (only necessary getters are shown here)
-    public long getPassengerId() {
-        return passengerId;
+    // Getters and Setters
+    public long getPassenger_ID() {
+        return passenger_ID;
     }
 
-    public void setPassengerId(long passengerId) {
-        this.passengerId = passengerId;
+    public void setPassenger_ID(long passenger_ID) {
+        this.passenger_ID = passenger_ID;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirst_name() {
+        return first_name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLast_name() {
+        return last_name;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
     public String getEmail() {
@@ -52,25 +45,5 @@ public class Passenger {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    // Override toString() method to provide a meaningful representation of the object
-    @Override
-    public String toString() {
-        return "Passenger{" +
-                "passengerId=" + passengerId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
     }
 }

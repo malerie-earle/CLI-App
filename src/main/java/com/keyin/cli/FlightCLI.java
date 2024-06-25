@@ -5,7 +5,6 @@ import com.keyin.cli.api.models.Flight;
 import com.keyin.cli.api.models.Passenger;
 import com.keyin.cli.commands.BookFlightCommand;
 import com.keyin.cli.commands.ListFlightsCommand;
-import com.keyin.cli.commands.ReserveSeatCommand;
 import com.keyin.cli.utils.InputReader;
 
 import java.io.IOException;
@@ -87,9 +86,8 @@ public class FlightCLI {
     private static void bookFlight() {
         long flightId = inputReader.readLong("Enter flight ID: ");
         long passengerId = inputReader.readLong("Enter passenger ID: ");
-        String seatClass = inputReader.readString("Enter seat class: ");
         try {
-            String response = apiClient.bookFlight(flightId, passengerId, seatClass);
+            String response = apiClient.bookFlight(flightId, passengerId);
             System.out.println("Booking response: " + response);
         } catch (IOException e) {
             System.err.println("Error booking flight: " + e.getMessage());
@@ -97,7 +95,7 @@ public class FlightCLI {
     }
 
     private static void reserveSeat() {
-        // Implement reserveSeat logic if needed
         System.out.println("Reserve a seat functionality not implemented yet.");
+        // Implement reserveSeat logic if needed
     }
 }
