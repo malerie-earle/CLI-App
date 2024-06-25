@@ -2,7 +2,7 @@ package com.keyin.cli.menus;
 
 import java.util.Scanner;
 
-public class MenuDirectory {
+public class ReportMenu {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -14,22 +14,22 @@ public class MenuDirectory {
 
             switch (choice) {
                 case 1:
-                    FlightMenu();
+                    GenerateAirportReport();
                     break;
                 case 2:
-                    BookingMenu();
+                    GenerateAircraftReport();
                     break;
                 case 3:
-                    PassengerMenu();
+                    GenerateFlightReport();
                     break;
                 case 4:
-                    AircraftMenu();
+                    GenerateBookingReport();
                     break;
                 case 5:
-                    AirportMenu();
+                    GeneratePassengerReport();
                     break;
                 case 6:
-                    ReportMenu();
+                    GenerateSeatingChartReport();
                     break;
                 case 7:
                     exit = true;
@@ -45,13 +45,13 @@ public class MenuDirectory {
 
     private static void printMenu() {
         System.out.println();
-        System.out.println("===== Aerospace Operations =====");
-        System.out.println("1. Flight Management System");
-        System.out.println("2. Booking Management System");
-        System.out.println("3. Passenger Management System");
-        System.out.println("4. Aircraft Management System");
-        System.out.println("5. Airport Management System");
-        System.out.println("6. Report Management System");
+        System.out.println("===== Report Menu =====");
+        System.out.println("1. Generate Airport Report");
+        System.out.println("2. Generate Aircraft Report");
+        System.out.println("3. Generate Flight Report");
+        System.out.println("4. Generate Booking Report");
+        System.out.println("5. Generate Passenger Report");
+        System.out.println("6. Generate Seating Chart Report");
         System.out.println("7. Exit");
         System.out.println();
         System.out.print("Choose an option: ");
@@ -66,19 +66,4 @@ public class MenuDirectory {
         return scanner.nextInt();
     }
 
-    private static void FlightMenu() {
-        System.out.println("Flight Management System");
-        FlightMenu();
-    }
-
-    private static void optionTwo() {
-        System.out.println("You chose Option 2");
-        // Add functionality for Option 2
-    }
-
-    private static void optionThree() {
-        System.out.println("You chose Option 3");
-        // Add functionality for Option 3
-    }
 }
-
