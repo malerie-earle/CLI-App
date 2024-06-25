@@ -1,82 +1,127 @@
-package com.keyin.rest.flight; // Assuming this is the correct package
+package com.keyin.cli.api.models;
+
+import com.keyin.rest.airport.Airport;
+import com.keyin.rest.aircraft.Aircraft;
+import com.keyin.rest.booking.Booking;
+
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 
 public class Flight {
-    private String flightId;
-    private String origin;
-    private String destination;
-    private String departureTime;
-    private String arrivalTime;
-    private int duration; // Duration in minutes
-    private int seatsAvailable;
+    private long flight_ID;
+    private Airport origin;
+    private Airport destination;
+    private Aircraft aircraft;
+    private LocalDateTime departure_time;
+    private LocalDateTime arrival_time;
+    private Status status; // Enum or string
+    private Booking[][] flightBookings;
 
-    // Constructors, getters, setters, toString, etc.
-
-    // Example constructors
-    public Flight() {
-    }
-
-    public Flight(String flightId, String origin, String destination, String departureTime, String arrivalTime, int duration, int seatsAvailable) {
-        this.flightId = flightId;
+    public Flight(long flight_ID, Airport origin, Airport destination, Aircraft aircraft, LocalDateTime departure_time, LocalDateTime arrival_time, Status status) {
+        this.flight_ID = flight_ID;
         this.origin = origin;
         this.destination = destination;
-        this.departureTime = departureTime;
-        this.arrivalTime = arrivalTime;
-        this.duration = duration;
-        this.seatsAvailable = seatsAvailable;
+        this.aircraft = aircraft;
+        this.departure_time = departure_time;
+        this.arrival_time = arrival_time;
+        this.status = status;
+        this.flightBookings = new Booking[aircraft.getRows()][aircraft.getColumns()];
     }
 
-    // Getters and Setters (only necessary getters are shown here)
-    public String getFlightId() {
-        return flightId;
+    // Getters and Setters
+    public long getFlight_ID() {
+        return flight_ID;
     }
 
-    public void setFlightId(String flightId) {
-        this.flightId = flightId;
+    public void setFlight_ID(long flight_ID) {
+        this.flight_ID = flight_ID;
     }
 
-    public String getOrigin() {
+
+    public Airport getOrigin() {
         return origin;
     }
 
-    public void setOrigin(String origin) {
+    public void setOrigin(Airport origin) {
         this.origin = origin;
     }
 
-    public String getDestination() {
+    public Airport getDestination() {
         return destination;
     }
 
-    public void setDestination(String destination) {
+    public void setDestination(Airport destination) {
         this.destination = destination;
     }
 
-    public int getDuration() {
-        return duration;
+    public Aircraft getAircraft() {
+        return aircraft;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public void setAircraft(Aircraft aircraft) {
+        this.aircraft = aircraft;
     }
 
-    public int getSeatsAvailable() {
-        return seatsAvailable;
+    public LocalDateTime getDeparture_time() {
+        return departure_time;
     }
 
-    public void setSeatsAvailable(int seatsAvailable) {
-        this.seatsAvailable = seatsAvailable;
+    public void setDeparture_time(LocalDateTime departure_time) {
+        this.departure_time = departure_time;
     }
 
-    // Override toString() method to provide a meaningful representation of the object
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "flightId='" + flightId + '\'' +
-                ", origin='" + origin + '\'' +
-                ", destination='" + destination + '\'' +
-                ", departureTime='" + departureTime + '\'' +
-                ", arrivalTime='" + arrivalTime + '\'' +
-                ", duration=" + duration +
-                ", seatsAvailable=" + seatsAvailable +
-                '}';
+    public LocalDateTime getArrival_time() {
+        return arrival_time;
     }
+
+    public void setArrival_time(LocalDateTime arrival_time) {
+        this.arrival_time = arrival_time;
+    }
+
+    public void setBookings(Booking[][] bookings) {
+        this.flightBookings = bookings;
+    }
+
+    public Booking[][] getBookings() {
+        return flightBookings;
+    }
+
+    public Long getFlightDuration(){
+        return departure_time.until(arrival_time, ChronoUnit.MINUTES);
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    // Enum for flight status
+    public enum Status {
+        ON_TIME, DELAYED, CANCELED
+    }
+
+    public boolean isOccupied(int row, int col){
+        return flightBookings[row][col] != null;
+    }
+
+    public void setSeat(int row, int col, Booking booking){
+        flightBookings[row][col] = booking;
+    }
+
+    /* TO DO
+    public void assignRandomSeat() {
+        Random random = new Random();
+        while (true) {
+            int row = random.nextInt(aircraft.getRows());
+            int col = random.nextInt(aircraft.getColumns());
+            if (!seatOccupied[row][col]) {
+                seatOccupied[row][col] = true;
+                break;
+            }
+        }
+    }
+     */
 }

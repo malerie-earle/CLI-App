@@ -38,11 +38,12 @@ public class APIClient {
         return executeRequest(request, Passenger[].class);
     }
 
-    public String bookFlight(long flightId, long passengerId, String seatClass) throws IOException {
+    public String bookFlight(long flightId, long passengerId) throws IOException {
         StringEntity requestEntity = new StringEntity(
-                String.format("{\"flightId\": %d, \"passengerId\": %d, \"seatClass\": \"%s\"}", flightId, passengerId, seatClass));
+                String.format("{\"flightId\": %d, \"passengerId\": %d}", flightId, passengerId));
         HttpPost request = new HttpPost(BASE_URL + "/bookings");
         request.setEntity(requestEntity);
+        request.setHeader("Content-Type", "application/json");
         HttpResponse response = httpClient.execute(request);
         return EntityUtils.toString(response.getEntity());
     }
