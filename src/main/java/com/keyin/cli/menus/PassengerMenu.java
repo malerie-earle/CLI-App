@@ -2,7 +2,7 @@ package com.keyin.cli.menus;
 
 import java.util.Scanner;
 
-public class MenuDirectory {
+public class PassengerMenu {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -14,24 +14,21 @@ public class MenuDirectory {
 
             switch (choice) {
                 case 1:
-                    FlightMenu();
+                    ViewAllPassengers();
                     break;
                 case 2:
-                    BookingMenu();
+                    SearchPassengersMenu();
                     break;
                 case 3:
-                    PassengerMenu();
+                    AddPassenger();
                     break;
                 case 4:
-                    AircraftMenu();
+                    EditPassengerByID();
                     break;
                 case 5:
-                    AirportMenu();
+                    DeletePassengerByID();
                     break;
                 case 6:
-                    ReportMenu();
-                    break;
-                case 7:
                     exit = true;
                     System.out.println("Exiting... Goodbye!");
                     break;
@@ -45,14 +42,13 @@ public class MenuDirectory {
 
     private static void printMenu() {
         System.out.println();
-        System.out.println("===== Aerospace Operations =====");
-        System.out.println("1. Flight Management System");
-        System.out.println("2. Booking Management System");
-        System.out.println("3. Passenger Management System");
-        System.out.println("4. Aircraft Management System");
-        System.out.println("5. Airport Management System");
-        System.out.println("6. Report Management System");
-        System.out.println("7. Exit");
+        System.out.println("===== Passenger Management System =====");
+        System.out.println("1. View All Passengers");
+        System.out.println("2. Search Passengers Menu");
+        System.out.println("3. Add Passenger");
+        System.out.println("4. Edit Passenger by ID");
+        System.out.println("5. Delete Passenger by ID");
+        System.out.println("6. Exit");
         System.out.println();
         System.out.print("Choose an option: ");
     }
@@ -66,19 +62,4 @@ public class MenuDirectory {
         return scanner.nextInt();
     }
 
-    private static void FlightMenu() {
-        System.out.println("Flight Management System");
-        FlightMenu();
-    }
-
-    private static void optionTwo() {
-        System.out.println("You chose Option 2");
-        // Add functionality for Option 2
-    }
-
-    private static void optionThree() {
-        System.out.println("You chose Option 3");
-        // Add functionality for Option 3
-    }
 }
-

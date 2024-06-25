@@ -33,13 +33,13 @@ Booking Reservation System
     - Search Bookings by Seat Number
     - Search Bookings by Status
   - Add Booking
-    - Add Booking by Flight ID
-    - Add Booking by Passenger ID
-    - Add Booking by Seat Number
-      - Choose Seat Number
-      - Randomly Assign Seat Number
-  - Edit Booking
-  - Delete Booking
+//    - Add Booking by Flight ID
+//    - Add Booking by Passenger ID
+//    - Add Booking by Seat Number
+//      - Choose Seat Number
+//      - Randomly Assign Seat Number
+  - Edit Booking By ID
+  - Delete Booking By ID
 
 Passenger Management System
   - View All Passengers
