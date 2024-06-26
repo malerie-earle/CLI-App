@@ -14,22 +14,22 @@ public class MenuDirectory {
 
             switch (choice) {
                 case 1:
-                    FlightMenu();
+                    FlightMenu.main(args);
                     break;
                 case 2:
-                    BookingMenu();
+                    BookingMenu.main(args);
                     break;
                 case 3:
-                    PassengerMenu();
+                    PassengerMenu.main(args);
                     break;
                 case 4:
-                    AircraftMenu();
+                    AircraftMenu.main(args);
                     break;
                 case 5:
-                    AirportMenu();
+                    AirportMenu.main(args);
                     break;
                 case 6:
-                    ReportMenu();
+                    ReportMenu.main(args);
                     break;
                 case 7:
                     exit = true;
@@ -65,20 +65,4 @@ public class MenuDirectory {
         }
         return scanner.nextInt();
     }
-
-    private static void FlightMenu() {
-        System.out.println("Flight Management System");
-        FlightMenu();
-    }
-
-    private static void optionTwo() {
-        System.out.println("You chose Option 2");
-        // Add functionality for Option 2
-    }
-
-    private static void optionThree() {
-        System.out.println("You chose Option 3");
-        // Add functionality for Option 3
-    }
 }
-

@@ -7,16 +7,13 @@ public class Airport {
     private String city;
     private String province;
 
-
     public Airport(long airport_ID, String code, String name, String city, String province) {
         this.airport_ID = airport_ID;
         this.code = code;
         this.name = name;
         this.city = city;
         this.province = province;
-
     }
-
 
     public long getAirport_ID() {
         return airport_ID;
@@ -57,6 +54,4 @@ public class Airport {
     public void setProvince(String province) {
         this.province = province;
     }
-
-
 }

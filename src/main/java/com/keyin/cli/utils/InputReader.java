@@ -5,20 +5,28 @@ import java.util.Scanner;
 public class InputReader {
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static int readInt(String prompt) {
+    public int readInt(String prompt) {
         System.out.print(prompt);
         while (!scanner.hasNextInt()) {
             System.out.println("Invalid input. Please enter a number.");
-            scanner.next(); // discard invalid input
+            scanner.next();
             System.out.print(prompt);
         }
-        int input = scanner.nextInt();
-        scanner.nextLine(); // Consume newline left-over
-        return input;
+        return scanner.nextInt();
     }
 
-    public static String readString(String prompt) {
+    public long readLong(String prompt) {
         System.out.print(prompt);
-        return scanner.nextLine();
+        while (!scanner.hasNextLong()) {
+            System.out.println("Invalid input. Please enter a number.");
+            scanner.next();
+            System.out.print(prompt);
+        }
+        return scanner.nextLong();
+    }
+
+    public String readString(String prompt) {
+        System.out.print(prompt);
+        return scanner.next();
     }
 }

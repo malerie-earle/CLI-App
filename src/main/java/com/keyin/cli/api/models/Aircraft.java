@@ -20,7 +20,6 @@ public class Aircraft {
         this.rows = rows;
         this.columns = columns;
         this.numAisles = numAisles;
-
     }
 
     public long getAircraft_ID() {
@@ -79,16 +78,13 @@ public class Aircraft {
         this.numAisles = numAisles;
     }
 
-
     public List<String> emptySeatingChart() {
         List<String> chart = new ArrayList<>();
 
-        // Total seats per section between aisles
         int sections = numAisles + 1;
         int seatsPerSection = columns / sections;
         int extraSeats = columns % sections;
 
-        // Header row indicating seat labels
         StringBuilder header = new StringBuilder(" ");
         char seatLabel = 'A';
         for (int j = 0; j < sections; j++) {
@@ -100,12 +96,11 @@ public class Aircraft {
                 extraSeats--;
             }
             if (j < numAisles) {
-                header.append(" "); // Adding aisle
+                header.append(" ");
             }
         }
         chart.add(header.toString());
 
-        // Reset extraSeats for row construction
         extraSeats = columns % sections;
 
         for (int i = 0; i < rows; i++) {
@@ -122,7 +117,7 @@ public class Aircraft {
                     extraSeats--;
                 }
                 if (j < numAisles) {
-                    row.append(" "); // Adding aisle
+                    row.append(" ");
                 }
             }
             chart.add(row.toString());
