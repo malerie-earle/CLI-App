@@ -1,10 +1,18 @@
 package com.keyin.cli.menus;
 
+import com.keyin.cli.commands.*;
+import com.keyin.cli.api.APIClient;
+
 import java.util.Scanner;
 
 public class BookingMenu {
+    private final APIClient apiClient;
 
-    public static void main(String[] args) {
+    public BookingMenu(APIClient apiClient) {
+        this.apiClient = apiClient;
+    }
+
+    public void display() {
         Scanner scanner = new Scanner(System.in);
         boolean exit = false;
 
@@ -14,21 +22,18 @@ public class BookingMenu {
 
             switch (choice) {
                 case 1:
-                    ViewAllBookings();
+                    new ListBookingsCommand(apiClient).execute();
                     break;
                 case 2:
-                    SearchBookingsMenu();
+                    new SearchBookingsCommand(apiClient).execute();
                     break;
                 case 3:
-                    AddBooking();
+                    new AddBookingCommand(apiClient).execute();
                     break;
                 case 4:
-                    EditBookingByID();
+                    new CancelBookingCommand(apiClient).execute();
                     break;
                 case 5:
-                    DeleteBookingByID();
-                    break;
-                case 6:
                     exit = true;
                     System.out.println("Exiting... Goodbye!");
                     break;
@@ -46,9 +51,8 @@ public class BookingMenu {
         System.out.println("1. View All Bookings");
         System.out.println("2. Search Bookings Menu");
         System.out.println("3. Add Booking");
-        System.out.println("4. Edit Booking by ID");
-        System.out.println("5. Delete Booking by ID");
-        System.out.println("6. Exit");
+        System.out.println("4. Cancel Booking");
+        System.out.println("5. Exit");
         System.out.println();
         System.out.print("Choose an option: ");
     }
@@ -61,5 +65,4 @@ public class BookingMenu {
         }
         return scanner.nextInt();
     }
-
 }

@@ -13,13 +13,6 @@ public class DataReader {
 
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    /**
-     * Loads a list of Aircraft objects from a JSON file.
-     *
-     * @param jsonFilePath The path to the JSON file containing the aircraft data.
-     * @return A list of Aircraft objects.
-     * @throws IOException If there is an issue reading the file or parsing the JSON.
-     */
     public static List<Aircraft> loadAircraftsFromJson(String jsonFilePath) throws IOException {
         try {
             return objectMapper.readValue(new File(jsonFilePath), new TypeReference<List<Aircraft>>() {});
@@ -29,13 +22,6 @@ public class DataReader {
         }
     }
 
-    /**
-     * Loads a list of Airport objects from a JSON file.
-     *
-     * @param jsonFilePath The path to the JSON file containing the airport data.
-     * @return A list of Airport objects.
-     * @throws IOException If there is an issue reading the file or parsing the JSON.
-     */
     public static List<Airport> loadAirportsFromJson(String jsonFilePath) throws IOException {
         try {
             return objectMapper.readValue(new File(jsonFilePath), new TypeReference<List<Airport>>() {});
@@ -44,5 +30,4 @@ public class DataReader {
             throw e;
         }
     }
-
 }

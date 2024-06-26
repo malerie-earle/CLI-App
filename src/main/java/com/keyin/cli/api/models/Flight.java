@@ -14,7 +14,7 @@ public class Flight {
     private Aircraft aircraft;
     private LocalDateTime departure_time;
     private LocalDateTime arrival_time;
-    private Status status; // Enum or string
+    private Status status;
     private Booking[][] flightBookings;
 
     public Flight(long flight_ID, Airport origin, Airport destination, Aircraft aircraft, LocalDateTime departure_time, LocalDateTime arrival_time, Status status) {
@@ -28,7 +28,6 @@ public class Flight {
         this.flightBookings = new Booking[aircraft.getRows()][aircraft.getColumns()];
     }
 
-    // Getters and Setters
     public long getFlight_ID() {
         return flight_ID;
     }
@@ -36,7 +35,6 @@ public class Flight {
     public void setFlight_ID(long flight_ID) {
         this.flight_ID = flight_ID;
     }
-
 
     public Airport getOrigin() {
         return origin;
@@ -78,16 +76,12 @@ public class Flight {
         this.arrival_time = arrival_time;
     }
 
-    public void setBookings(Booking[][] bookings) {
-        this.flightBookings = bookings;
-    }
-
-    public Booking[][] getBookings() {
+    public Booking[][] getFlightBookings() {
         return flightBookings;
     }
 
-    public Long getFlightDuration(){
-        return departure_time.until(arrival_time, ChronoUnit.MINUTES);
+    public void setFlightBookings(Booking[][] flightBookings) {
+        this.flightBookings = flightBookings;
     }
 
     public Status getStatus() {
@@ -98,17 +92,20 @@ public class Flight {
         this.status = status;
     }
 
-    // Enum for flight status
-    public enum Status {
-        ON_TIME, DELAYED, CANCELED
+    public Long getFlightDuration() {
+        return departure_time.until(arrival_time, ChronoUnit.MINUTES);
     }
 
-    public boolean isOccupied(int row, int col){
+    public boolean isOccupied(int row, int col) {
         return flightBookings[row][col] != null;
     }
 
-    public void setSeat(int row, int col, Booking booking){
+    public void setSeat(int row, int col, Booking booking) {
         flightBookings[row][col] = booking;
+    }
+
+    public enum Status {
+        ON_TIME, DELAYED, CANCELED
     }
 
     /* TO DO
@@ -123,5 +120,5 @@ public class Flight {
             }
         }
     }
-     */
+    */
 }

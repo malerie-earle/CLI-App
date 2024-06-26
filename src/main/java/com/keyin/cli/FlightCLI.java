@@ -5,6 +5,7 @@ import com.keyin.cli.api.models.Flight;
 import com.keyin.cli.api.models.Passenger;
 import com.keyin.cli.commands.BookFlightCommand;
 import com.keyin.cli.commands.ListFlightsCommand;
+import com.keyin.cli.menus.*;
 import com.keyin.cli.utils.InputReader;
 
 import java.io.IOException;
@@ -18,22 +19,28 @@ public class FlightCLI {
         System.out.println("Welcome to FlightCLI!");
 
         while (true) {
-            printMenu();
+            printMainMenu();
             int choice = inputReader.readInt("Enter your choice: ");
             switch (choice) {
                 case 1:
-                    listFlights();
+                    new FlightMenu(apiClient).display();
                     break;
                 case 2:
-                    bookFlight();
+                    new BookingMenu(apiClient).display();
                     break;
                 case 3:
-                    reserveSeat();
+                    new PassengerMenu(apiClient).display();
                     break;
                 case 4:
-                    listPassengers();
+                    new AircraftMenu(apiClient).display();
                     break;
                 case 5:
+                    new AirportMenu(apiClient).display();
+                    break;
+                case 6:
+                    new ReportMenu(apiClient).display();
+                    break;
+                case 7:
                     System.out.println("Exiting FlightCLI. Goodbye!");
                     return;
                 default:
@@ -42,60 +49,14 @@ public class FlightCLI {
         }
     }
 
-    private static void printMenu() {
-        System.out.println("\n### Menu ###");
-        System.out.println("1. List all flights");
-        System.out.println("2. Book a flight");
-        System.out.println("3. Reserve a seat");
-        System.out.println("4. List all passengers");
-        System.out.println("5. Exit");
-    }
-
-    private static void listFlights() {
-        try {
-            List<Flight> flights = apiClient.getAllFlights();
-            if (flights != null && !flights.isEmpty()) {
-                System.out.println("\n### Flights ###");
-                for (Flight flight : flights) {
-                    System.out.println(flight);
-                }
-            } else {
-                System.out.println("No flights available.");
-            }
-        } catch (IOException e) {
-            System.err.println("Error fetching flights: " + e.getMessage());
-        }
-    }
-
-    private static void listPassengers() {
-        try {
-            List<Passenger> passengers = apiClient.getAllPassengers();
-            if (passengers != null && !passengers.isEmpty()) {
-                System.out.println("\n### Passengers ###");
-                for (Passenger passenger : passengers) {
-                    System.out.println(passenger);
-                }
-            } else {
-                System.out.println("No passengers available.");
-            }
-        } catch (IOException e) {
-            System.err.println("Error fetching passengers: " + e.getMessage());
-        }
-    }
-
-    private static void bookFlight() {
-        long flightId = inputReader.readLong("Enter flight ID: ");
-        long passengerId = inputReader.readLong("Enter passenger ID: ");
-        try {
-            String response = apiClient.bookFlight(flightId, passengerId);
-            System.out.println("Booking response: " + response);
-        } catch (IOException e) {
-            System.err.println("Error booking flight: " + e.getMessage());
-        }
-    }
-
-    private static void reserveSeat() {
-        System.out.println("Reserve a seat functionality not implemented yet.");
-        // Implement reserveSeat logic if needed
+    private static void printMainMenu() {
+        System.out.println("\n### Main Menu ###");
+        System.out.println("1. Flight Management");
+        System.out.println("2. Booking Management");
+        System.out.println("3. Passenger Management");
+        System.out.println("4. Aircraft Management");
+        System.out.println("5. Airport Management");
+        System.out.println("6. Report Management");
+        System.out.println("7. Exit");
     }
 }

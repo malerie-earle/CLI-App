@@ -1,11 +1,14 @@
 package com.keyin.cli.menus;
 
+import com.keyin.cli.commands.ReportMenuCommands;
+
 import java.util.Scanner;
 
 public class ReportMenu {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ReportMenuCommands reportMenuCommands = new ReportMenuCommands(scanner);
         boolean exit = false;
 
         while (!exit) {
@@ -14,22 +17,22 @@ public class ReportMenu {
 
             switch (choice) {
                 case 1:
-                    GenerateAirportReport();
+                    reportMenuCommands.generateAirportReport();
                     break;
                 case 2:
-                    GenerateAircraftReport();
+                    reportMenuCommands.generateAircraftReport();
                     break;
                 case 3:
-                    GenerateFlightReport();
+                    reportMenuCommands.generateFlightReport();
                     break;
                 case 4:
-                    GenerateBookingReport();
+                    reportMenuCommands.generateBookingReport();
                     break;
                 case 5:
-                    GeneratePassengerReport();
+                    reportMenuCommands.generatePassengerReport();
                     break;
                 case 6:
-                    GenerateSeatingChartReport();
+                    reportMenuCommands.generateSeatingChartReport();
                     break;
                 case 7:
                     exit = true;
@@ -65,5 +68,4 @@ public class ReportMenu {
         }
         return scanner.nextInt();
     }
-
 }
