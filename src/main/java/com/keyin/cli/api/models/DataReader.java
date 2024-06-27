@@ -1,10 +1,8 @@
 package com.keyin.cli.api.models;
 
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-
+import com.keyin.cli.api.models.*;
 
 import java.io.File;
 import java.io.IOException;

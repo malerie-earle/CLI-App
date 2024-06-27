@@ -2,6 +2,7 @@ package com.keyin.cli.commands;
 
 import com.keyin.cli.api.APIClient;
 import com.keyin.cli.api.models.Flight;
+import com.keyin.cli.menus.SeatingChartMenu;
 
 import java.io.IOException;
 import java.util.List;
@@ -87,5 +88,11 @@ public class FlightMenuCommands {
         } catch (IOException e) {
             System.err.println("Error deleting flight: " + e.getMessage());
         }
+    }
+
+    public void seatingChartMenu() {
+        System.out.println("Opening seating chart menu...");
+        SeatingChartMenu seatingChartMenu = new SeatingChartMenu(apiClient, scanner);
+        seatingChartMenu.main(new String[]{});
     }
 }

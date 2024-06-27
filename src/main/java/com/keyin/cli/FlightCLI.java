@@ -1,8 +1,15 @@
 package com.keyin.cli;
 
 import com.keyin.cli.api.APIClient;
+import com.keyin.cli.api.models.Flight;
+import com.keyin.cli.api.models.Passenger;
+import com.keyin.cli.commands.BookFlightCommand;
+import com.keyin.cli.commands.ListFlightsCommand;
 import com.keyin.cli.menus.*;
-import com.keyin.cli.util.InputReader;
+import com.keyin.cli.utils.InputReader;
+
+import java.io.IOException;
+import java.util.List;
 
 public class FlightCLI {
     private static final APIClient apiClient = new APIClient();

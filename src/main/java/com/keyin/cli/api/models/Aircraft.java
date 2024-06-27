@@ -1,6 +1,5 @@
 package com.keyin.cli.api.models;
 
-
 import java.util.ArrayList;
 import java.util.List;
 

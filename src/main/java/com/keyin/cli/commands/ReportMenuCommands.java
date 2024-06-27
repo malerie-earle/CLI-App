@@ -8,24 +8,24 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ReportMenuCommands {
-    private final APIClient apiClient;
     private final Scanner scanner;
+    private final APIClient apiClient;
 
-    public ReportMenuCommands(APIClient apiClient, Scanner scanner) {
-        this.apiClient = apiClient;
+    public ReportMenuCommands(Scanner scanner) {
         this.scanner = scanner;
+        this.apiClient = new APIClient();
     }
 
     public void generateAirportReport() {
         try {
+            System.out.println("Generating Airport Report...");
             List<Airport> airports = apiClient.getAllAirports();
             if (airports != null && !airports.isEmpty()) {
-                System.out.println("\nGenerating Airport Report:");
                 for (Airport airport : airports) {
-                    System.out.println("Name: " + airport.getName() + ", Code: " + airport.getCode());
+                    System.out.println(airport);
                 }
             } else {
-                System.out.println("No airports found.");
+                System.out.println("No airports available.");
             }
         } catch (IOException e) {
             System.err.println("Error generating airport report: " + e.getMessage());
@@ -34,14 +34,14 @@ public class ReportMenuCommands {
 
     public void generateAircraftReport() {
         try {
+            System.out.println("Generating Aircraft Report...");
             List<Aircraft> aircrafts = apiClient.getAllAircrafts();
             if (aircrafts != null && !aircrafts.isEmpty()) {
-                System.out.println("\nGenerating Aircraft Report:");
                 for (Aircraft aircraft : aircrafts) {
-                    System.out.println("Registration Number: " + aircraft.getRegistrationNumber() + ", Model: " + aircraft.getModel());
+                    System.out.println(aircraft);
                 }
             } else {
-                System.out.println("No aircrafts found.");
+                System.out.println("No aircrafts available.");
             }
         } catch (IOException e) {
             System.err.println("Error generating aircraft report: " + e.getMessage());
@@ -50,14 +50,14 @@ public class ReportMenuCommands {
 
     public void generateFlightReport() {
         try {
+            System.out.println("Generating Flight Report...");
             List<Flight> flights = apiClient.getAllFlights();
             if (flights != null && !flights.isEmpty()) {
-                System.out.println("\nGenerating Flight Report:");
                 for (Flight flight : flights) {
-                    System.out.println("Flight Number: " + flight.getFlightNumber() + ", From: " + flight.getDepartureAirport() + ", To: " + flight.getDestinationAirport());
+                    System.out.println(flight);
                 }
             } else {
-                System.out.println("No flights found.");
+                System.out.println("No flights available.");
             }
         } catch (IOException e) {
             System.err.println("Error generating flight report: " + e.getMessage());
@@ -66,14 +66,14 @@ public class ReportMenuCommands {
 
     public void generateBookingReport() {
         try {
+            System.out.println("Generating Booking Report...");
             List<Booking> bookings = apiClient.getAllBookings();
             if (bookings != null && !bookings.isEmpty()) {
-                System.out.println("\nGenerating Booking Report:");
                 for (Booking booking : bookings) {
-                    System.out.println("Booking ID: " + booking.getId() + ", Flight ID: " + booking.getFlightId() + ", Passenger ID: " + booking.getPassengerId());
+                    System.out.println(booking);
                 }
             } else {
-                System.out.println("No bookings found.");
+                System.out.println("No bookings available.");
             }
         } catch (IOException e) {
             System.err.println("Error generating booking report: " + e.getMessage());
@@ -82,14 +82,14 @@ public class ReportMenuCommands {
 
     public void generatePassengerReport() {
         try {
+            System.out.println("Generating Passenger Report...");
             List<Passenger> passengers = apiClient.getAllPassengers();
             if (passengers != null && !passengers.isEmpty()) {
-                System.out.println("\nGenerating Passenger Report:");
                 for (Passenger passenger : passengers) {
-                    System.out.println("Name: " + passenger.getName() + ", Email: " + passenger.getEmail());
+                    System.out.println(passenger);
                 }
             } else {
-                System.out.println("No passengers found.");
+                System.out.println("No passengers available.");
             }
         } catch (IOException e) {
             System.err.println("Error generating passenger report: " + e.getMessage());
@@ -98,16 +98,14 @@ public class ReportMenuCommands {
 
     public void generateSeatingChartReport() {
         try {
+            System.out.println("Generating Seating Chart Report...");
             List<SeatingChart> seatingCharts = apiClient.getAllSeatingCharts();
             if (seatingCharts != null && !seatingCharts.isEmpty()) {
-                System.out.println("\nGenerating Seating Chart Report:");
                 for (SeatingChart seatingChart : seatingCharts) {
-                    System.out.println("Seating Chart for Flight ID: " + seatingChart.getFlightId());
-                    // Assuming SeatingChart has a method to get seating details
-                    System.out.println("Seating Details: " + seatingChart.getSeatingDetails());
+                    System.out.println(seatingChart);
                 }
             } else {
-                System.out.println("No seating charts found.");
+                System.out.println("No seating charts available.");
             }
         } catch (IOException e) {
             System.err.println("Error generating seating chart report: " + e.getMessage());

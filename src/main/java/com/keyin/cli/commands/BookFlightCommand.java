@@ -2,7 +2,7 @@ package com.keyin.cli.commands;
 
 import com.keyin.cli.Command;
 import com.keyin.cli.api.APIClient;
-import com.keyin.cli.util.InputReader;
+import com.keyin.cli.utils.InputReader;
 
 import java.io.IOException;
 

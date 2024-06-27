@@ -1,6 +1,6 @@
 package com.keyin.cli.commands;
 
-import com.keyin.rest.booking.Booking;
+import com.keyin.cli.api.models.*;
 import java.util.List;
 import java.util.Scanner;
 

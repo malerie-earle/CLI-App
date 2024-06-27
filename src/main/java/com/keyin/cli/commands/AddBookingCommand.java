@@ -1,9 +1,7 @@
 package com.keyin.cli.commands;
 
-import com.keyin.cli.api.models.Booking;
-import com.keyin.cli.api.models.Flight;
-import com.keyin.cli.api.models.Passenger;
-
+import com.keyin.cli.api.models.*;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Scanner;
 

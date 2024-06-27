@@ -1,7 +1,6 @@
 package com.keyin.cli.commands;
 
-import com.keyin.cli.api.models.Booking;
-import com.keyin.cli.api.models.Flight;
+import com.keyin.cli.api.models.*;
 
 import java.util.Iterator;
 import java.util.List;
@@ -45,7 +44,7 @@ public class DeleteBookingByIDCommand {
 
     private void removeBookingFromFlight(Booking bookingToRemove) {
         for (Flight flight : flightList) {
-            Booking[][] bookings = flight.getFlightBookings();
+            Booking[][] bookings = flight.getBookings();
             for (int row = 0; row < bookings.length; row++) {
                 for (int col = 0; col < bookings[row].length; col++) {
                     if (bookings[row][col] != null && bookings[row][col].equals(bookingToRemove)) {
