@@ -1,8 +1,6 @@
 package com.keyin.cli.api.models;
 
-import com.keyin.rest.airport.Airport;
-import com.keyin.rest.aircraft.Aircraft;
-import com.keyin.rest.booking.Booking;
+import com.keyin.cli.api.models.*;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

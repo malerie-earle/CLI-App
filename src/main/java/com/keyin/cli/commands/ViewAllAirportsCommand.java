@@ -1,6 +1,6 @@
 package com.keyin.cli.commands;
 
-import com.keyin.rest.airport.Airport;
+import com.keyin.cli.api.models.*;
 import java.util.List;
 
 public class ViewAllAirportsCommand {

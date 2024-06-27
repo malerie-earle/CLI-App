@@ -1,12 +1,7 @@
 package com.keyin.cli.commands;
 
 import com.keyin.cli.api.APIClient;
-import com.keyin.cli.api.models.Aircraft;
-import com.keyin.cli.api.models.Airport;
-import com.keyin.cli.api.models.Booking;
-import com.keyin.cli.api.models.Flight;
-import com.keyin.cli.api.models.Passenger;
-import com.keyin.cli.api.models.SeatingChart;
+import com.keyin.cli.api.models.*;
 
 import java.io.IOException;
 import java.util.List;
