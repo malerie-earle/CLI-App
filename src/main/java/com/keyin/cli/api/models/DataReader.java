@@ -1,9 +1,10 @@
-package com.keyin.rest.dataReader;
+package com.keyin.cli.api.models;
+
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.keyin.rest.aircraft.Aircraft;
-import com.keyin.rest.airport.Airport;
+
+
 
 import java.io.File;
 import java.io.IOException;

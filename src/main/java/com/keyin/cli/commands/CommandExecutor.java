@@ -1,7 +1,6 @@
 package com.keyin.cli.commands;
 
 import com.keyin.cli.api.APIClient;
-
 import java.util.Scanner;
 
 public class CommandExecutor {
@@ -84,10 +83,8 @@ public class CommandExecutor {
                 case 5:
                     flightMenuCommands.deleteFlightById();
                     break;
+                // Remove seatingChartMenu if not needed
                 case 6:
-                    flightMenuCommands.seatingChartMenu();
-                    break;
-                case 7:
                     exit = true;
                     System.out.println("Returning to main menu...");
                     break;
@@ -182,8 +179,7 @@ public class CommandExecutor {
         System.out.println("3. Add Flight");
         System.out.println("4. Edit Flight by ID");
         System.out.println("5. Delete Flight by ID");
-        System.out.println("6. Seating Chart Menu");
-        System.out.println("7. Return to Main Menu");
+        System.out.println("6. Return to Main Menu");
         System.out.println();
         System.out.print("Select an option: ");
     }

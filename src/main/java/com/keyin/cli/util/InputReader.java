@@ -1,4 +1,4 @@
-package com.keyin.cli.utils;
+package com.keyin.cli.util;
 
 import java.util.Scanner;
 

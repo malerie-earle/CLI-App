@@ -1,36 +1,31 @@
 package com.keyin.cli.commands;
 
 import com.keyin.cli.api.APIClient;
-import com.keyin.cli.api.models.Aircraft;
-import com.keyin.cli.api.models.Airport;
-import com.keyin.cli.api.models.Booking;
-import com.keyin.cli.api.models.Flight;
-import com.keyin.cli.api.models.Passenger;
-import com.keyin.cli.api.models.SeatingChart;
+import com.keyin.cli.api.models.*;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class ReportMenuCommands {
-    private final Scanner scanner;
     private final APIClient apiClient;
+    private final Scanner scanner;
 
-    public ReportMenuCommands(Scanner scanner) {
+    public ReportMenuCommands(APIClient apiClient, Scanner scanner) {
+        this.apiClient = apiClient;
         this.scanner = scanner;
-        this.apiClient = new APIClient();
     }
 
     public void generateAirportReport() {
         try {
-            System.out.println("Generating Airport Report...");
             List<Airport> airports = apiClient.getAllAirports();
             if (airports != null && !airports.isEmpty()) {
+                System.out.println("\nGenerating Airport Report:");
                 for (Airport airport : airports) {
-                    System.out.println(airport);
+                    System.out.println("Name: " + airport.getName() + ", Code: " + airport.getCode());
                 }
             } else {
-                System.out.println("No airports available.");
+                System.out.println("No airports found.");
             }
         } catch (IOException e) {
             System.err.println("Error generating airport report: " + e.getMessage());
@@ -39,14 +34,14 @@ public class ReportMenuCommands {
 
     public void generateAircraftReport() {
         try {
-            System.out.println("Generating Aircraft Report...");
             List<Aircraft> aircrafts = apiClient.getAllAircrafts();
             if (aircrafts != null && !aircrafts.isEmpty()) {
+                System.out.println("\nGenerating Aircraft Report:");
                 for (Aircraft aircraft : aircrafts) {
-                    System.out.println(aircraft);
+                    System.out.println("Registration Number: " + aircraft.getRegistrationNumber() + ", Model: " + aircraft.getModel());
                 }
             } else {
-                System.out.println("No aircrafts available.");
+                System.out.println("No aircrafts found.");
             }
         } catch (IOException e) {
             System.err.println("Error generating aircraft report: " + e.getMessage());
@@ -55,14 +50,14 @@ public class ReportMenuCommands {
 
     public void generateFlightReport() {
         try {
-            System.out.println("Generating Flight Report...");
             List<Flight> flights = apiClient.getAllFlights();
             if (flights != null && !flights.isEmpty()) {
+                System.out.println("\nGenerating Flight Report:");
                 for (Flight flight : flights) {
-                    System.out.println(flight);
+                    System.out.println("Flight Number: " + flight.getFlightNumber() + ", From: " + flight.getDepartureAirport() + ", To: " + flight.getDestinationAirport());
                 }
             } else {
-                System.out.println("No flights available.");
+                System.out.println("No flights found.");
             }
         } catch (IOException e) {
             System.err.println("Error generating flight report: " + e.getMessage());
@@ -71,14 +66,14 @@ public class ReportMenuCommands {
 
     public void generateBookingReport() {
         try {
-            System.out.println("Generating Booking Report...");
             List<Booking> bookings = apiClient.getAllBookings();
             if (bookings != null && !bookings.isEmpty()) {
+                System.out.println("\nGenerating Booking Report:");
                 for (Booking booking : bookings) {
-                    System.out.println(booking);
+                    System.out.println("Booking ID: " + booking.getId() + ", Flight ID: " + booking.getFlightId() + ", Passenger ID: " + booking.getPassengerId());
                 }
             } else {
-                System.out.println("No bookings available.");
+                System.out.println("No bookings found.");
             }
         } catch (IOException e) {
             System.err.println("Error generating booking report: " + e.getMessage());
@@ -87,14 +82,14 @@ public class ReportMenuCommands {
 
     public void generatePassengerReport() {
         try {
-            System.out.println("Generating Passenger Report...");
             List<Passenger> passengers = apiClient.getAllPassengers();
             if (passengers != null && !passengers.isEmpty()) {
+                System.out.println("\nGenerating Passenger Report:");
                 for (Passenger passenger : passengers) {
-                    System.out.println(passenger);
+                    System.out.println("Name: " + passenger.getName() + ", Email: " + passenger.getEmail());
                 }
             } else {
-                System.out.println("No passengers available.");
+                System.out.println("No passengers found.");
             }
         } catch (IOException e) {
             System.err.println("Error generating passenger report: " + e.getMessage());
@@ -103,14 +98,16 @@ public class ReportMenuCommands {
 
     public void generateSeatingChartReport() {
         try {
-            System.out.println("Generating Seating Chart Report...");
             List<SeatingChart> seatingCharts = apiClient.getAllSeatingCharts();
             if (seatingCharts != null && !seatingCharts.isEmpty()) {
+                System.out.println("\nGenerating Seating Chart Report:");
                 for (SeatingChart seatingChart : seatingCharts) {
-                    System.out.println(seatingChart);
+                    System.out.println("Seating Chart for Flight ID: " + seatingChart.getFlightId());
+                    // Assuming SeatingChart has a method to get seating details
+                    System.out.println("Seating Details: " + seatingChart.getSeatingDetails());
                 }
             } else {
-                System.out.println("No seating charts available.");
+                System.out.println("No seating charts found.");
             }
         } catch (IOException e) {
             System.err.println("Error generating seating chart report: " + e.getMessage());
