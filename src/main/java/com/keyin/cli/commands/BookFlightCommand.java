@@ -16,10 +16,12 @@ public class BookFlightCommand implements Command {
     @Override
     public void execute() {
         try {
-            long flightId = InputReader.readInt("Enter flight ID: ");
+            long flightId = InputReader.readLong("Enter flight ID: ");
             long passengerId = InputReader.readInt("Enter passenger ID: ");
+            long row = InputReader.readInt("Enter flight ID: ");
+            long col = InputReader.readInt("Enter passenger ID: ");
 
-            String response = apiClient.bookFlight(flightId, passengerId);
+            String response = apiClient.bookFlight(flightId, passengerId, row, col);
             System.out.println("Booking response: " + response);
         } catch (IOException e) {
             System.err.println("Error booking flight: " + e.getMessage());
