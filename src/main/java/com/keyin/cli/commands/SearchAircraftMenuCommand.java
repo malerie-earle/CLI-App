@@ -1,6 +1,7 @@
 package com.keyin.cli.commands;
 
-import com.keyin.rest.aircraft.Aircraft;
+import com.keyin.cli.api.models.Aircraft;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,20 +16,26 @@ public class SearchAircraftMenuCommand {
     }
 
     public void execute() {
-        System.out.println("===== Search Aircraft Menu =====");
-        System.out.println("Enter aircraft model to search: ");
-        String model = scanner.nextLine().trim().toLowerCase();
+        System.out.println("===== Search Aircraft =====");
 
-        boolean found = false;
+        System.out.print("Enter aircraft ID: ");
+        long aircraftId = Long.parseLong(scanner.nextLine().trim());
+
+        Aircraft aircraft = findAircraftById(aircraftId);
+
+        if (aircraft != null) {
+            System.out.println("Aircraft found: " + aircraft);
+        } else {
+            System.out.println("No aircraft found with ID: " + aircraftId);
+        }
+    }
+
+    private Aircraft findAircraftById(long aircraftId) {
         for (Aircraft aircraft : aircraftList) {
-            if (aircraft.getModel().toLowerCase().contains(model)) {
-                System.out.println(aircraft);
-                found = true;
+            if (aircraft.getAircraftId() == aircraftId) {
+                return aircraft;
             }
         }
-
-        if (!found) {
-            System.out.println("No aircraft found with model containing '" + model + "'.");
-        }
+        return null;
     }
 }

@@ -1,4 +1,4 @@
-package com.keyin.rest.booking;
+package com.keyin.cli.api.models;
 
 public class Booking {
     private long booking_ID;

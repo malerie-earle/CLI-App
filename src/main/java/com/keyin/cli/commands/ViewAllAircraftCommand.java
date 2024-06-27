@@ -1,6 +1,7 @@
 package com.keyin.cli.commands;
 
-import com.keyin.rest.aircraft.Aircraft;
+import com.keyin.cli.api.models.Aircraft;
+
 import java.util.List;
 
 public class ViewAllAircraftCommand {
@@ -12,13 +13,10 @@ public class ViewAllAircraftCommand {
     }
 
     public void execute() {
-        System.out.println("===== Viewing All Aircraft =====");
-        if (aircraftList.isEmpty()) {
-            System.out.println("No aircraft available.");
-        } else {
-            for (Aircraft aircraft : aircraftList) {
-                System.out.println(aircraft);
-            }
+        System.out.println("===== View All Aircraft =====");
+
+        for (Aircraft aircraft : aircraftList) {
+            System.out.println(aircraft);
         }
     }
 }

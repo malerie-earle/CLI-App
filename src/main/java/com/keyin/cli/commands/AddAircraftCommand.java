@@ -1,7 +1,6 @@
 package com.keyin.cli.commands;
 
-import com.keyin.rest.aircraft.Aircraft;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class AddAircraftCommand {

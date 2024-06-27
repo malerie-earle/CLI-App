@@ -1,4 +1,4 @@
-package com.keyin.rest.airport;
+package com.keyin.cli.api.models;
 
 public class Airport {
     private long airport_ID;
