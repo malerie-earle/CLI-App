@@ -38,7 +38,7 @@ public class FlightCLI {
                     new AirportMenu(apiClient).display();
                     break;
                 case 6:
-                    new ReportMenu(apiClient).display();
+                    //new ReportMenu(apiClient).display();
                     break;
                 case 7:
                     System.out.println("Exiting FlightCLI. Goodbye!");

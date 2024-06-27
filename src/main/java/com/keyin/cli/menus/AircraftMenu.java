@@ -22,19 +22,19 @@ public class AircraftMenu {
 
             switch (choice) {
                 case 1:
-                    new ListAircraftCommand(apiClient).execute();
+                    //new ListAircraftCommand(apiClient).execute();
                     break;
                 case 2:
-                    new SearchAircraftCommand(apiClient).execute();
+                    //new SearchAircraftCommand(apiClient).execute();
                     break;
                 case 3:
-                    new AddAircraftCommand(apiClient).execute();
+                    //new AddAircraftCommand(apiClient).execute();
                     break;
                 case 4:
-                    new EditAircraftCommand(apiClient).execute();
+                    //new EditAircraftCommand(apiClient).execute();
                     break;
                 case 5:
-                    new DeleteAircraftCommand(apiClient).execute();
+                    //new DeleteAircraftCommand(apiClient).execute();
                     break;
                 case 6:
                     exit = true;
@@ -45,7 +45,6 @@ public class AircraftMenu {
             }
         }
 
-        scanner.close();
     }
 
     private static void printMenu() {

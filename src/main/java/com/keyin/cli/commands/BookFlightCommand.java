@@ -3,6 +3,7 @@ package com.keyin.cli.commands;
 import com.keyin.cli.Command;
 import com.keyin.cli.api.APIClient;
 import com.keyin.cli.utils.InputReader;
+import java.util.Scanner;
 
 import java.io.IOException;
 
@@ -16,13 +17,18 @@ public class BookFlightCommand implements Command {
     @Override
     public void execute() {
         try {
-            long flightId = InputReader.readLong("Enter flight ID: ");
-            long passengerId = InputReader.readInt("Enter passenger ID: ");
-            long row = InputReader.readInt("Enter flight ID: ");
-            long col = InputReader.readInt("Enter passenger ID: ");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Enter flight ID:");
+            long flightId = scanner.nextLong();
+            System.out.println("Enter passenger ID: ");
+            long passengerId = scanner.nextLong();
+            System.out.println("Enter number of rows");
+            int row = scanner.nextInt();
+            System.out.println("Enter number of columns:");
+            int col = scanner.nextInt();
+            //Need changes here
+            apiClient.bookFlight(flightId, passengerId, row, col);
 
-            String response = apiClient.bookFlight(flightId, passengerId, row, col);
-            System.out.println("Booking response: " + response);
         } catch (IOException e) {
             System.err.println("Error booking flight: " + e.getMessage());
         } catch (NumberFormatException e) {

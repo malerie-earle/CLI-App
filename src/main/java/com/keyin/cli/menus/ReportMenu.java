@@ -17,22 +17,22 @@ public class ReportMenu {
 
             switch (choice) {
                 case 1:
-                    reportMenuCommands.generateAirportReport();
+                    //reportMenuCommands.generateAirportReport();
                     break;
                 case 2:
-                    reportMenuCommands.generateAircraftReport();
+                    //reportMenuCommands.generateAircraftReport();
                     break;
                 case 3:
-                    reportMenuCommands.generateFlightReport();
+                    //reportMenuCommands.generateFlightReport();
                     break;
                 case 4:
-                    reportMenuCommands.generateBookingReport();
+                    //reportMenuCommands.generateBookingReport();
                     break;
                 case 5:
-                    reportMenuCommands.generatePassengerReport();
+                    //reportMenuCommands.generatePassengerReport();
                     break;
                 case 6:
-                    reportMenuCommands.generateSeatingChartReport();
+                    //reportMenuCommands.generateSeatingChartReport();
                     break;
                 case 7:
                     exit = true;
@@ -43,7 +43,6 @@ public class ReportMenu {
             }
         }
 
-        scanner.close();
     }
 
     private static void printMenu() {
@@ -68,4 +67,6 @@ public class ReportMenu {
         }
         return scanner.nextInt();
     }
+
+
 }

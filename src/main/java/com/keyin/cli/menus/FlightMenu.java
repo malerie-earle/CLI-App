@@ -6,6 +6,7 @@ import java.util.Scanner;
 
     public class FlightMenu {
         APIClient apiClient;
+
         public FlightMenu(APIClient apiClient){
             this.apiClient = apiClient;
         }
@@ -71,5 +72,6 @@ import java.util.Scanner;
                 flag = execute(choice);
             }
         }
+
 
     }

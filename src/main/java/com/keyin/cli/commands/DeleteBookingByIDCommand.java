@@ -44,7 +44,7 @@ public class DeleteBookingByIDCommand {
 
     private void removeBookingFromFlight(Booking bookingToRemove) {
         for (Flight flight : flightList) {
-            Booking[][] bookings = flight.getBookings();
+            Booking[][] bookings = flight.getFlightBookings();
             for (int row = 0; row < bookings.length; row++) {
                 for (int col = 0; col < bookings[row].length; col++) {
                     if (bookings[row][col] != null && bookings[row][col].equals(bookingToRemove)) {

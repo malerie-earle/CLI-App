@@ -1,10 +1,6 @@
 package com.keyin.cli.menus;
 
-import com.keyin.cli.commands.AddPassengerCommand;
-import com.keyin.cli.commands.DeletePassengerCommand;
-import com.keyin.cli.commands.EditPassengerCommand;
-import com.keyin.cli.commands.ListPassengersCommand;
-import com.keyin.cli.commands.SearchPassengersCommand;
+import com.keyin.cli.commands.*;
 import com.keyin.cli.api.APIClient;
 
 import java.util.Scanner;
@@ -26,19 +22,19 @@ public class PassengerMenu {
 
             switch (choice) {
                 case 1:
-                    new ListPassengersCommand(apiClient).execute();
+                    //new ListPassengersCommand(apiClient).execute();
                     break;
                 case 2:
-                    new SearchPassengersCommand(apiClient).execute();
+                    //new SearchPassengersCommand(apiClient).execute();
                     break;
                 case 3:
-                    new AddPassengerCommand(apiClient).execute();
+                    //new AddPassengerCommand(apiClient).execute();
                     break;
                 case 4:
-                    new EditPassengerCommand(apiClient).execute();
+                    //new EditPassengerCommand(apiClient).execute();
                     break;
                 case 5:
-                    new DeletePassengerCommand(apiClient).execute();
+                    //new DeletePassengerCommand(apiClient).execute();
                     break;
                 case 6:
                     exit = true;
@@ -49,7 +45,6 @@ public class PassengerMenu {
             }
         }
 
-        scanner.close();
     }
 
     private static void printMenu() {
@@ -73,4 +68,6 @@ public class PassengerMenu {
         }
         return scanner.nextInt();
     }
+
+
 }
