@@ -1,47 +1,43 @@
 package com.keyin.cli.menus;
 
+import com.keyin.cli.api.APIClient;
+
 import java.util.Scanner;
 
     public class FlightMenu {
-
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            boolean exit = false;
-
-            while (!exit) {
-                printMenu();
-                int choice = getUserChoice(scanner);
-
-                switch (choice) {
-                    case 1:
-                        ViewAllFlights();
-                        break;
-                    case 2:
-                        SearchFlightMenu();
-                        break;
-                    case 3:
-                        AddFlight();
-                        break;
-                    case 4:
-                        EditFlightByID();
-                        break;
-                    case 5:
-                        DeleteFlightByID();
-                        break;
-                    case 6:
-                        SeatingChartMenu();
-                        break;
-                    case 7:
-                        exit = true;
-                        System.out.println("Exiting... Goodbye!");
-                        break;
-                    default:
-                        System.out.println("Invalid choice. Please try again.");
-                }
-            }
-
-            scanner.close();
+        APIClient apiClient;
+        public FlightMenu(APIClient apiClient){
+            this.apiClient = apiClient;
         }
+
+        private static boolean execute(int choice) {
+            switch (choice) {
+                case 1:
+                    //new ViewAllFlights();
+                    break;
+                case 2:
+                    //SearchFlightMenu();
+                    break;
+                case 3:
+                    //AddFlight();
+                    break;
+                case 4:
+                    //EditFlightByID();
+                    break;
+                case 5:
+                    //DeleteFlightByID();
+                    break;
+                case 6:
+                    //SeatingChartMenu();
+                    break;
+               case 7:
+                   return true;
+               default:
+                   System.out.println("Invalid choice. Please try again.");
+            }
+            return false;
+        }
+
 
         private static void printMenu() {
             System.out.println();
@@ -64,6 +60,16 @@ import java.util.Scanner;
                 System.out.print("Choose an option: ");
             }
             return scanner.nextInt();
+        }
+
+        public void display(){
+            boolean flag = false;
+            while(!flag) {
+                Scanner scanner = new Scanner(System.in);
+                printMenu();
+                int choice = getUserChoice(scanner);
+                flag = execute(choice);
+            }
         }
 
     }
