@@ -22,19 +22,19 @@ public class AirportMenu {
 
             switch (choice) {
                 case 1:
-                    new ListAirportsCommand(apiClient).execute();
+                    //new ListAirportsCommand(apiClient).execute();
                     break;
                 case 2:
-                    new SearchAirportsCommand(apiClient).execute();
+                    //new SearchAirportsCommand(apiClient).execute();
                     break;
                 case 3:
-                    new AddAirportCommand(apiClient).execute();
+                    //new AddAirportCommand(apiClient).execute();
                     break;
                 case 4:
-                    new EditAirportCommand(apiClient).execute();
+                    //new EditAirportCommand(apiClient).execute();
                     break;
                 case 5:
-                    new DeleteAirportCommand(apiClient).execute();
+                    //new DeleteAirportCommand(apiClient).execute();
                     break;
                 case 6:
                     exit = true;
@@ -45,7 +45,6 @@ public class AirportMenu {
             }
         }
 
-        scanner.close();
     }
 
     private static void printMenu() {
@@ -69,4 +68,6 @@ public class AirportMenu {
         }
         return scanner.nextInt();
     }
+
+
 }

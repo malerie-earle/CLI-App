@@ -2,7 +2,7 @@ package com.keyin.cli.commands;
 
 import com.keyin.cli.api.APIClient;
 import com.keyin.cli.api.models.Flight;
-import com.keyin.cli.menus.SeatingChartMenu;
+import com.keyin.cli.menus.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -38,7 +38,8 @@ public class FlightMenuCommands {
         System.out.println("Enter search criteria to find flights:");
         String searchCriteria = scanner.nextLine();
         try {
-            List<Flight> searchResults = apiClient.searchFlights(searchCriteria);
+            //List<Flight> searchResults = apiClient.searchFlights(searchCriteria);
+            List<Flight> searchResults = null;
             if (searchResults != null && !searchResults.isEmpty()) {
                 System.out.println("\nSearch results for '" + searchCriteria + "':");
                 for (Flight flight : searchResults) {
@@ -47,7 +48,7 @@ public class FlightMenuCommands {
             } else {
                 System.out.println("No flights found matching the criteria.");
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error searching flights: " + e.getMessage());
         }
     }
@@ -57,10 +58,10 @@ public class FlightMenuCommands {
         // Example: Read input for flight details from user
         String flightDetails = scanner.nextLine();
         try {
-            Flight newFlight = apiClient.addFlight(flightDetails);
+            Flight newFlight = null;
             System.out.println("New flight added successfully:");
             System.out.println(newFlight);
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error adding new flight: " + e.getMessage());
         }
     }
@@ -71,10 +72,10 @@ public class FlightMenuCommands {
         System.out.println("Enter updated details for flight:");
         String updatedDetails = scanner.nextLine();
         try {
-            Flight updatedFlight = apiClient.updateFlight(flightId, updatedDetails);
+            Flight updatedFlight = null;
             System.out.println("Flight with ID " + flightId + " updated successfully:");
             System.out.println(updatedFlight);
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error updating flight: " + e.getMessage());
         }
     }
@@ -83,16 +84,18 @@ public class FlightMenuCommands {
         System.out.println("Enter flight ID to delete:");
         long flightId = Long.parseLong(scanner.nextLine());
         try {
-            apiClient.deleteFlight(flightId);
+            //apiClient.deleteFlight(flightId);
             System.out.println("Flight with ID " + flightId + " deleted successfully.");
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Error deleting flight: " + e.getMessage());
         }
     }
-
+    /*
     public void seatingChartMenu() {
         System.out.println("Opening seating chart menu...");
         SeatingChartMenu seatingChartMenu = new SeatingChartMenu(apiClient, scanner);
         seatingChartMenu.main(new String[]{});
     }
+
+     */
 }

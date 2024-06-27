@@ -13,7 +13,7 @@ import java.util.List;
 import java.io.IOException;
 
 public class APIClient {
-    private static final String BASE_URL = "http://your.api.endpoint";
+    private static final String BASE_URL = "http://localhost:8080";
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     private String sendGetRequest(String endpoint) throws IOException {
@@ -109,6 +109,11 @@ public class APIClient {
     public List<Airport> getAllAirports() throws IOException {
         String response = sendGetRequest("/airports");
         return Arrays.asList(objectMapper.readValue(response, Airport[].class));
+    }
+
+    public Airport getAirportbyID(int id) throws IOException{
+        String response = sendGetRequest("/airport/"+id);
+        return objectMapper.readValue(response,Airport.class);
     }
 
     public void addAirport(Airport airport) throws IOException {
@@ -283,6 +288,14 @@ public class APIClient {
         String response = sendPostRequest("/passenger", jsonInputString);
         return objectMapper.readValue(response, Passenger.class);
     }
+
+
+    public Booking bookFlight(long flightId, long passengerId, int row, int column) throws IOException {
+        //BookingRequest bookingRequest = new BookingRequest(flightId, passengerId);
+        Booking newBooking = new Booking(0, flightId, passengerId, row, column);
+        String jsonInputString = objectMapper.writeValueAsString(newBooking);
+        String response = sendPostRequest("/flight/book", jsonInputString);
+        return objectMapper.readValue(response, Booking.class);
 
     public Passenger updatePassenger(long passenger_ID, Passenger updatedPassenger) throws IOException {
         String jsonInputString = objectMapper.writeValueAsString(updatedPassenger);

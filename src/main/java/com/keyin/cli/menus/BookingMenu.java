@@ -22,16 +22,16 @@ public class BookingMenu {
 
             switch (choice) {
                 case 1:
-                    new ListBookingsCommand(apiClient).execute();
+                    //new ListBookingsCommand(apiClient).execute();
                     break;
                 case 2:
-                    new SearchBookingsCommand(apiClient).execute();
+                    //new SearchBookingsCommand(apiClient).execute();
                     break;
                 case 3:
-                    new AddBookingCommand(apiClient).execute();
+                    //new AddBookingCommand(apiClient).execute();
                     break;
                 case 4:
-                    new CancelBookingCommand(apiClient).execute();
+                    //new CancelBookingCommand(apiClient).execute();
                     break;
                 case 5:
                     exit = true;
@@ -42,7 +42,6 @@ public class BookingMenu {
             }
         }
 
-        scanner.close();
     }
 
     private static void printMenu() {
@@ -65,4 +64,6 @@ public class BookingMenu {
         }
         return scanner.nextInt();
     }
+
+
 }

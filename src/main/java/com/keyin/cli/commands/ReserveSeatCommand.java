@@ -17,10 +17,11 @@ public class ReserveSeatCommand {
     public void reserveSeat(Flight flight, Passenger passenger) {
         if (flight != null && passenger != null) {
             try {
-                String response = apiClient.bookFlight(flight.getFlightId(), passenger.getPassengerId());
-                System.out.println("Seat reserved successfully for passenger ID: " + passenger.getPassengerId());
+                //String response = apiClient.bookFlight(flight.getFlightId(), passenger.getPassengerId());
+                String response = "toDo";
+                //System.out.println("Seat reserved successfully for passenger ID: " + passenger.getPassengerId());
                 System.out.println("Booking response: " + response);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 System.err.println("Error reserving seat: " + e.getMessage());
             }
         } else {
