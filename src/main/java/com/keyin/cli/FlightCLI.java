@@ -15,6 +15,23 @@ public class FlightCLI {
     private static final InputReader inputReader = new InputReader();
 
     public static void main(String[] args) {
+        public class ASCIIPicture {
+    public static void main(String[] args) {
+        System.out.println("              .------,");
+        System.out.println("              =\\      \\");
+        System.out.println(" .---.         =\\      \\");
+        System.out.println(" | C~ \\         =\\      \\");
+        System.out.println(" |     `----------'------'----------,");
+        System.out.println(".'     LI.-.LI LI LI LI LI LI LI.-.LI`-.");
+        System.out.println("\\ _/.____|_|______.------,______|_|_____)");
+        System.out.println("                 /      /");
+        System.out.println("               =/      /");
+        System.out.println("              =/      /");
+        System.out.println("             =/      /");
+        System.out.println("      jgs    /_____,");
+    }
+}
+
         System.out.println("Welcome to FlightCLI!");
 
         while (true) {
