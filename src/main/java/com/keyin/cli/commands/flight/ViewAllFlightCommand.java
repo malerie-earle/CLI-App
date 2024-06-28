@@ -11,7 +11,6 @@ public class ViewAllFlightCommand {
         System.out.println("===== Viewing All Flight =====");
         try{
             List<Flight> flightList = apiClient.getAllFlights();
-
             if (flightList.isEmpty()) {
                 System.out.println("No flight available.");
             } else {
