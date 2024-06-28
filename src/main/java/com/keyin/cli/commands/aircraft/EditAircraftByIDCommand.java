@@ -1,30 +1,25 @@
-package com.keyin.cli.commands;
+package com.keyin.cli.commands.aircraft;
 
+import com.keyin.cli.api.APIClient;
 import com.keyin.cli.api.models.*;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class EditAircraftByIDCommand {
 
-    private List<Aircraft> aircraftList;
-    private Scanner scanner;
-
-    public EditAircraftByIDCommand(List<Aircraft> aircraftList, Scanner scanner) {
-        this.aircraftList = aircraftList;
-        this.scanner = scanner;
-    }
+    private APIClient apiClient = new APIClient();
+    private Scanner scanner = new Scanner(System.in);
 
     public void execute() {
         System.out.println("===== Edit Aircraft by ID =====");
         System.out.print("Enter aircraft ID: ");
         long aircraft_ID = Long.parseLong(scanner.nextLine().trim());
 
-        Aircraft aircraftToUpdate = null;
-        for (Aircraft aircraft : aircraftList) {
-            if (aircraft.getAircraft_ID() == aircraft_ID) {
-                aircraftToUpdate = aircraft;
-                break;
-            }
+        Aircraft aircraftToUpdate = new Aircraft();
+        try {
+            aircraftToUpdate = apiClient.searchAircraftByID(aircraft_ID);
+        }catch (Exception e){
+            System.out.println("Aircraft not found with ID: " + aircraft_ID);
         }
 
         if (aircraftToUpdate == null) {
@@ -56,7 +51,11 @@ public class EditAircraftByIDCommand {
         int newNumAisles = Integer.parseInt(scanner.nextLine().trim());
         aircraftToUpdate.setNumAisles(newNumAisles);
 
-        System.out.println("Aircraft updated successfully:");
-        System.out.println(aircraftToUpdate);
+        try {
+            apiClient.updateAircraft(aircraft_ID,aircraftToUpdate);
+            System.out.println("Aircraft updated successfully:");
+        }catch (Exception e){
+            System.out.println("Error: "+e.getMessage());
+        }
     }
 }

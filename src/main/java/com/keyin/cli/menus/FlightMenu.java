@@ -5,11 +5,6 @@ import com.keyin.cli.api.APIClient;
 import java.util.Scanner;
 
     public class FlightMenu {
-        APIClient apiClient;
-
-        public FlightMenu(APIClient apiClient){
-            this.apiClient = apiClient;
-        }
 
         private static boolean execute(int choice) {
             switch (choice) {

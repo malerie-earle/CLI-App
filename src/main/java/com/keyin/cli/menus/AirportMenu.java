@@ -6,11 +6,6 @@ import com.keyin.cli.api.APIClient;
 import java.util.Scanner;
 
 public class AirportMenu {
-    private final APIClient apiClient;
-
-    public AirportMenu(APIClient apiClient) {
-        this.apiClient = apiClient;
-    }
 
     public void display() {
         Scanner scanner = new Scanner(System.in);
