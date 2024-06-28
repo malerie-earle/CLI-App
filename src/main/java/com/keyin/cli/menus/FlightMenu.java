@@ -25,7 +25,7 @@ import java.util.Scanner;
                     new DeleteFlightByIDCommand().execute();
                     break;
                 case 6:
-                    //SeatingChartMenu();
+                    new ViewFlightSeatingChartCommand().execute();
                     break;
                case 7:
                    return true;
@@ -44,7 +44,7 @@ import java.util.Scanner;
             System.out.println("3. Add Flight");
             System.out.println("4. Edit Flight by ID");
             System.out.println("5. Delete Flight by ID");
-            System.out.println("6. Seating Chart Menu");
+            System.out.println("6. View Flight Seating Chart by ID");
             System.out.println("7. Exit");
             System.out.println();
             System.out.print("Choose an option: ");
