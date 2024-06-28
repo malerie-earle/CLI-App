@@ -6,6 +6,10 @@ public class Passenger {
     private String last_name;
     private String email;
 
+    public Passenger(){
+
+    }
+
     public Passenger(long passenger_ID, String first_name, String last_name, String email) {
         this.passenger_ID = passenger_ID;
         this.first_name = first_name;
@@ -44,5 +48,15 @@ public class Passenger {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "passenger_ID=" + passenger_ID +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

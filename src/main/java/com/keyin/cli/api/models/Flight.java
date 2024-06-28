@@ -15,6 +15,10 @@ public class Flight {
     private Status status;
     private Booking[][] flightBookings;
 
+    public Flight(){
+
+    }
+
     public Flight(long flight_ID, Airport origin, Airport destination, Aircraft aircraft, LocalDateTime departure_time, LocalDateTime arrival_time, Status status) {
         this.flight_ID = flight_ID;
         this.origin = origin;

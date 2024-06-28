@@ -130,9 +130,9 @@ public class APIClient {
         sendDeleteRequest("/airport/"+airport_ID);
     }
 
-    public List<Airport> searchAirportByID(long airport_ID) throws IOException {
+    public Airport searchAirportByID(long airport_ID) throws IOException {
         String response = sendGetRequest("/airport/"+airport_ID);
-        return Arrays.asList(objectMapper.readValue(response, Airport[].class));
+        return objectMapper.readValue(response, Airport.class);
     }
 
     public List<Airport> searchAirportByName(String name) throws IOException {
@@ -202,9 +202,9 @@ public class APIClient {
         sendDeleteRequest("/flight/"+flightId);
     }
 
-    public List<Flight> searchFlightByID(long flight_ID) throws IOException {
+    public Flight searchFlightByID(long flight_ID) throws IOException {
         String response = sendGetRequest("/flight/"+flight_ID);
-        return Arrays.asList(objectMapper.readValue(response, Flight[].class));
+        return objectMapper.readValue(response, Flight.class);
     }
 
     public List<Flight> searchFlightByOrigin(Long origin_id) throws IOException {
@@ -263,9 +263,9 @@ public class APIClient {
         sendDeleteRequest("/flight/book/delete/"+booking_ID);
     }
 
-    public List<Booking> searchBookingByID(long booking_ID) throws IOException {
+    public Booking searchBookingByID(long booking_ID) throws IOException {
         String response = sendGetRequest("/booking/"+booking_ID);
-        return Arrays.asList(objectMapper.readValue(response, Booking[].class));
+        return objectMapper.readValue(response, Booking.class);
     }
 
     public List<Booking> searchBookingByFlight(long flight_ID) throws IOException {
@@ -312,9 +312,9 @@ public class APIClient {
         sendDeleteRequest("/passenger/"+passenger_ID);
     }
 
-    public List<Passenger> searchPassengerByID(long passenger_ID) throws IOException {
+    public Passenger searchPassengerByID(long passenger_ID) throws IOException {
         String response = sendGetRequest("/passenger/"+passenger_ID);
-        return Arrays.asList(objectMapper.readValue(response, Passenger[].class));
+        return objectMapper.readValue(response, Passenger.class);
     }
 
     public List<Passenger> searchPassengerByName(String name) throws IOException {
