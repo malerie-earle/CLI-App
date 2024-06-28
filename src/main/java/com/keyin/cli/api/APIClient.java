@@ -243,7 +243,7 @@ public class APIClient {
 
     public Booking addBooking(Booking booking) throws IOException {
         String jsonInputString = objectMapper.writeValueAsString(booking);
-        String response = sendPostRequest("/booking", jsonInputString);
+        String response = sendPostRequest("/flight/book", jsonInputString);
         return objectMapper.readValue(response, Booking.class);
     }
 
