@@ -7,6 +7,10 @@ public class Booking {
     private int seatRow;
     private int seatColumn;
 
+    public Booking(){
+        
+    }
+
     public Booking(long booking_ID, long flight_ID, long passenger_ID, int seatRow, int seatColumn) {
         this.booking_ID = booking_ID;
         this.flight_ID = flight_ID;

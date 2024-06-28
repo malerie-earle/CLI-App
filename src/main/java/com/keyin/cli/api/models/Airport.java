@@ -7,6 +7,10 @@ public class Airport {
     private String city;
     private String province;
 
+    public Airport(){
+
+    }
+
     public Airport(long airport_ID, String code, String name, String city, String province) {
         this.airport_ID = airport_ID;
         this.code = code;

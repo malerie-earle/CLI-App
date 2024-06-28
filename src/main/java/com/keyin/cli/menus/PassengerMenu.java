@@ -2,6 +2,11 @@ package com.keyin.cli.menus;
 
 import com.keyin.cli.commands.*;
 import com.keyin.cli.api.APIClient;
+import com.keyin.cli.commands.aircraft.SearchAircraftByIDCommand;
+import com.keyin.cli.commands.passenger.AddPassengerCommand;
+import com.keyin.cli.commands.passenger.DeletePassengerByIDCommand;
+import com.keyin.cli.commands.passenger.EditPassengerByIDCommand;
+import com.keyin.cli.commands.passenger.ViewAllPassengersCommand;
 
 import java.util.Scanner;
 
@@ -17,19 +22,19 @@ public class PassengerMenu {
 
             switch (choice) {
                 case 1:
-                    //new ListPassengersCommand(apiClient).execute();
+                    new ViewAllPassengersCommand().execute();
                     break;
                 case 2:
-                    //new SearchPassengersCommand(apiClient).execute();
+                    new SearchAircraftByIDCommand().execute();
                     break;
                 case 3:
-                    //new AddPassengerCommand(apiClient).execute();
+                    new AddPassengerCommand().execute();
                     break;
                 case 4:
-                    //new EditPassengerCommand(apiClient).execute();
+                    new EditPassengerByIDCommand().execute();
                     break;
                 case 5:
-                    //new DeletePassengerCommand(apiClient).execute();
+                    new DeletePassengerByIDCommand().execute();
                     break;
                 case 6:
                     exit = true;
