@@ -1,6 +1,8 @@
 package com.keyin.cli.menus;
 
 import com.keyin.cli.api.APIClient;
+import com.keyin.cli.commands.flight.DeleteFlightByIDCommand;
+import com.keyin.cli.commands.flight.ViewAllFlightCommand;
 
 import java.util.Scanner;
 
@@ -9,7 +11,7 @@ import java.util.Scanner;
         private static boolean execute(int choice) {
             switch (choice) {
                 case 1:
-                    //new ViewAllFlights();
+                    new ViewAllFlightCommand().execute();
                     break;
                 case 2:
                     //SearchFlightMenu();
@@ -21,7 +23,7 @@ import java.util.Scanner;
                     //EditFlightByID();
                     break;
                 case 5:
-                    //DeleteFlightByID();
+                    new DeleteFlightByIDCommand().execute();
                     break;
                 case 6:
                     //SeatingChartMenu();

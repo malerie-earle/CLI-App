@@ -58,9 +58,6 @@ public class FlightCLI {
                     new AirportMenu().display();
                     break;
                 case 6:
-                    //new ReportMenu(apiClient).display();
-                    break;
-                case 7:
                     System.out.println("Exiting FlightCLI. Goodbye!");
                     return;
                 default:
@@ -77,7 +74,6 @@ public class FlightCLI {
         System.out.println("3. Passenger Management");
         System.out.println("4. Aircraft Management");
         System.out.println("5. Airport Management");
-        System.out.println("6. Report Management");
-        System.out.println("7. Exit");
+        System.out.println("6. Exit");
     }
 }
