@@ -2,6 +2,10 @@ package com.keyin.cli.menus;
 
 import com.keyin.cli.commands.*;
 import com.keyin.cli.api.APIClient;
+import com.keyin.cli.commands.aircraft.SearchAircraftByIDCommand;
+import com.keyin.cli.commands.airport.*;
+import com.keyin.cli.commands.airport.AddAirportCommand;
+import com.keyin.cli.commands.airport.ViewAllAirportsCommand;
 
 import java.util.Scanner;
 
@@ -17,19 +21,19 @@ public class AirportMenu {
 
             switch (choice) {
                 case 1:
-                    //new ListAirportsCommand(apiClient).execute();
+                    new ViewAllAirportsCommand().execute();
                     break;
                 case 2:
-                    //new SearchAirportsCommand(apiClient).execute();
+                    new SearchAirportByIDCommand().execute();
                     break;
                 case 3:
-                    //new AddAirportCommand(apiClient).execute();
+                    new AddAirportCommand().execute();
                     break;
                 case 4:
-                    //new EditAirportCommand(apiClient).execute();
+                    new EditAirportByIDCommand().execute();
                     break;
                 case 5:
-                    //new DeleteAirportCommand(apiClient).execute();
+                    new DeleteAirportByIDCommand().execute();
                     break;
                 case 6:
                     exit = true;
