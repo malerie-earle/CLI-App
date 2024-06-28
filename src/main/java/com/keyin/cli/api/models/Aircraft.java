@@ -12,6 +12,10 @@ public class Aircraft {
     private int columns;
     private int numAisles;
 
+    public Aircraft(){
+
+    }
+
     public Aircraft(long aircraft_ID, String model, String airline, int capacity, int rows, int columns, int numAisles) {
         this.aircraft_ID = aircraft_ID;
         this.model = model;
@@ -124,6 +128,19 @@ public class Aircraft {
         }
 
         return chart;
+    }
+
+    @Override
+    public String toString() {
+        return "Aircraft{" +
+                "aircraft_ID=" + aircraft_ID +
+                ", model='" + model + '\'' +
+                ", airline='" + airline + '\'' +
+                ", capacity=" + capacity +
+                ", rows=" + rows +
+                ", columns=" + columns +
+                ", numAisles=" + numAisles +
+                '}';
     }
 
     public static void main(String[] args) {

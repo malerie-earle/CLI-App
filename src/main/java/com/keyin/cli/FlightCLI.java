@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class FlightCLI {
-    private static final APIClient apiClient = new APIClient();
     private static final InputReader inputReader = new InputReader();
 
     public static void main(String[] args) {
@@ -23,19 +22,19 @@ public class FlightCLI {
             int choice = inputReader.readInt("Enter your choice: ");
             switch (choice) {
                 case 1:
-                    new FlightMenu(apiClient).display();
+                    new FlightMenu().display();
                     break;
                 case 2:
-                    new BookingMenu(apiClient).display();
+                    new BookingMenu().display();
                     break;
                 case 3:
-                    new PassengerMenu(apiClient).display();
+                    new PassengerMenu().display();
                     break;
                 case 4:
-                    new AircraftMenu(apiClient).display();
+                    new AircraftMenu().display();
                     break;
                 case 5:
-                    new AirportMenu(apiClient).display();
+                    new AirportMenu().display();
                     break;
                 case 6:
                     //new ReportMenu(apiClient).display();

@@ -1,82 +1,74 @@
 Menu Directory:
 
 Flight Reservation System
-  - View All Flights
-  - Search Flights
-      - Search Flights by ID
-      - Search Flights by Airports
-        - Search Flights by Origin Airport
-        - Search Flights by Destination Airport
+  - View All Flights R
+  - Search Flights R
+      - Search Flights by ID R
+        -  Displays the Seating Chart of the flight
+      - Search Flights by Airports R
+        - Search Flights by Origin Airport R
+        - Search Flights by Destination Airport R
       - Search Flights by Date
         - Search Flights by Departure Date
         - Search Flights by Arrival Date
-      - Search Flights by Aircraft
+      - Search Flights by Airline R
       - Search Flights by Status
-  - Add Flight
-  - Edit Flight
-  - Delete Flight
-  - Manage Seating Chart/Bookings for Flight by ID
-    - View Seating Chart
-    - Search Seating Chart by Seat Number
-    - Search Seating Chart by Passenger ID
-    - Add Passenger to Seating Chart
-    - Edit Passenger in Seating Chart
-    - Delete Passenger from Seating Chart
-    - Randomly Assign Passenger to Seating Chart
+  - Add Flight R
+  - Edit Flight R
+  - Delete Flight R
 
 Booking Reservation System
-  - View All Bookings
-  - Search Bookings
-    - Search Bookings by ID
-    - Search Bookings by Flight ID
-    - Search Bookings by Passenger ID
-    - Search Bookings by Seat Number
-    - Search Bookings by Status
-  - Add Booking
-//    - Add Booking by Flight ID
-//    - Add Booking by Passenger ID
-//    - Add Booking by Seat Number
-//      - Choose Seat Number
-//      - Randomly Assign Seat Number
-  - Edit Booking By ID
-  - Delete Booking By ID
+  - View All Bookings R
+   - Search Bookings by ID R
+   - Search Bookings by Flight ID R
+   - Search Bookings by Passenger ID R
+   - (Search Bookings by Seat Number)
+   - (Search Bookings by Status)
+  - Add Booking R
+//  1. Get desired flight
+//  2. Show Seating Chart
+//    3. Prompt user to
+//      - Choose Seat Number - prompt user for row/col
+//      - Randomly Assign Seat Number - randomly select empty seat client side, then send the api call
+  - Edit Booking By ID R
+  - Delete Booking By ID R
 
 Passenger Management System
-  - View All Passengers
-  - Search Passenger by ID
+  - View All Passengers R
+  - Search Passenger by ID R
   - Search Passenger by First Name
   - Search Passenger by Last Name
   - Search Passenger by Email
-  - Add Passenger
-  - Edit Passenger
-  - Delete Passenger
+  - Add Passenger R
+  - Edit Passenger R
+  - Delete Passenger R
 
 Aircraft System
-    - View All Aircraft
-    - Search Aircraft by ID
+    - View All Aircraft R X
+    - Search Aircraft by ID R X
     - Search Aircraft by Model
     - Search Aircraft by Capacity
-    - Add Aircraft
-    - Edit Aircraft
-    - Delete Aircraft
+    - Add Aircraft R X
+    - Edit Aircraft R X
+    - Delete Aircraft R X
 
 Airport System
-  - View All Airports
-  - Search Airport by ID
+  - View All Airports R
+  - Search Airport by ID R
   - Search Airport by Code
   - Search Airport by Name
   - Search Airport by City
   - Search Airport by Province
-  - Add Airport
-  - Edit Airport
-  - Delete Airport
+  - Add Airport R
+  - Edit Airport R
+  - Delete Airport R
 
-Report Generation System
+(Report Generation System
   - Generate Airport Report
   - Generate Aircraft Report
   - Generate Flight Report
   - Generate Booking Report
   - Generate Passenger Report
-  - Generate Seating Chart Report
+  - Generate Seating Chart Report)
 
 Exit

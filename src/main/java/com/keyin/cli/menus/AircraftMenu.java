@@ -2,15 +2,11 @@ package com.keyin.cli.menus;
 
 import com.keyin.cli.commands.*;
 import com.keyin.cli.api.APIClient;
+import com.keyin.cli.commands.aircraft.*;
 
 import java.util.Scanner;
 
 public class AircraftMenu {
-    private final APIClient apiClient;
-
-    public AircraftMenu(APIClient apiClient) {
-        this.apiClient = apiClient;
-    }
 
     public void display() {
         Scanner scanner = new Scanner(System.in);
@@ -22,19 +18,19 @@ public class AircraftMenu {
 
             switch (choice) {
                 case 1:
-                    //new ListAircraftCommand(apiClient).execute();
+                    new ViewAllAircraftCommand().execute();
                     break;
                 case 2:
-                    //new SearchAircraftCommand(apiClient).execute();
+                    new SearchAircraftByIDCommand().execute();
                     break;
                 case 3:
-                    //new AddAircraftCommand(apiClient).execute();
+                    new AddAircraftCommand().execute();
                     break;
                 case 4:
-                    //new EditAircraftCommand(apiClient).execute();
+                    new EditAircraftByIDCommand().execute();
                     break;
                 case 5:
-                    //new DeleteAircraftCommand(apiClient).execute();
+                    new DeleteAircraftByIDCommand().execute();
                     break;
                 case 6:
                     exit = true;
