@@ -15,8 +15,14 @@ public class FlightCLI {
     private static final InputReader inputReader = new InputReader();
 
     public static void main(String[] args) {
-        public class ASCIIPicture {
-    public static void main(String[] args) {
+        System.out.println("============================================================");
+        System.out.println("   _____ _  ____     __  _      ____   _____ _______   __");
+        System.out.println("  / ____| |/ /\\ \\   / / | |    / __ \\ / ____|_   _\\ \\ / /");
+        System.out.println(" | (___ | ' /  \\ \\_/ /  | |   | |  | | |  __  | |  \\ V / ");
+        System.out.println("  \\___ \\|  <    \\   /   | |   | |  | | | |_ | | |   > <  ");
+        System.out.println(" |_____/|_|\\_\\   |_|    |______\\____/ \\_____|_____/_/ \\_\\");
+        System.out.println("                                                                ");
+        System.out.println("============================================================");
         System.out.println("              .------,");
         System.out.println("              =\\      \\");
         System.out.println(" .---.         =\\      \\");
@@ -28,12 +34,10 @@ public class FlightCLI {
         System.out.println("               =/      /");
         System.out.println("              =/      /");
         System.out.println("             =/      /");
-        System.out.println("      jgs    /_____,");
-    }
-}
-
-        System.out.println("Welcome to FlightCLI!");
-
+        System.out.println("             /_____,");
+        System.out.println("============================================================");
+        System.out.println("      Welcome to SkyLogix: Your Aerospace Navigator");
+        System.out.println("============================================================");
         while (true) {
             printMainMenu();
             int choice = inputReader.readInt("Enter your choice: ");
@@ -66,7 +70,8 @@ public class FlightCLI {
     }
 
     private static void printMainMenu() {
-        System.out.println("\n### Main Menu ###");
+        System.out.println("                       MAIN MENU ");
+        System.out.println("============================================================");
         System.out.println("1. Flight Management");
         System.out.println("2. Booking Management");
         System.out.println("3. Passenger Management");
