@@ -118,7 +118,7 @@ public class Flight {
                 if(col == null){
                     System.out.print("[ ] ");
                 } else {
-                    System.out.print("[X]  ");
+                    System.out.print("[0] ");
                 }
             }
         }
