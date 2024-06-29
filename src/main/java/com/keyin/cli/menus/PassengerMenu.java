@@ -1,12 +1,8 @@
 package com.keyin.cli.menus;
 
-import com.keyin.cli.commands.*;
 import com.keyin.cli.api.APIClient;
 import com.keyin.cli.commands.aircraft.SearchAircraftByIDCommand;
-import com.keyin.cli.commands.passenger.AddPassengerCommand;
-import com.keyin.cli.commands.passenger.DeletePassengerByIDCommand;
-import com.keyin.cli.commands.passenger.EditPassengerByIDCommand;
-import com.keyin.cli.commands.passenger.ViewAllPassengersCommand;
+import com.keyin.cli.commands.passenger.*;
 
 import java.util.Scanner;
 
@@ -25,7 +21,7 @@ public class PassengerMenu {
                     new ViewAllPassengersCommand().execute();
                     break;
                 case 2:
-                    new SearchAircraftByIDCommand().execute();
+                    new SearchPassengersByID().execute();
                     break;
                 case 3:
                     new AddPassengerCommand().execute();

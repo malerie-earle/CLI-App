@@ -1,7 +1,10 @@
 package com.keyin.cli.menus;
 
-import com.keyin.cli.commands.*;
 import com.keyin.cli.api.APIClient;
+import com.keyin.cli.commands.booking.AddBookingCommand;
+import com.keyin.cli.commands.booking.DeleteBookingByIDCommand;
+import com.keyin.cli.commands.booking.SearchBookingsByIDCommand;
+import com.keyin.cli.commands.booking.ViewAllBookingsCommand;
 
 import java.util.Scanner;
 
@@ -17,16 +20,16 @@ public class BookingMenu {
 
             switch (choice) {
                 case 1:
-                    //new ListBookingsCommand(apiClient).execute();
+                    new ViewAllBookingsCommand().execute();
                     break;
                 case 2:
-                    //new SearchBookingsCommand(apiClient).execute();
+                    new SearchBookingsByIDCommand().execute();
                     break;
                 case 3:
-                    //new AddBookingCommand(apiClient).execute();
+                    new AddBookingCommand().execute();
                     break;
                 case 4:
-                    //new CancelBookingCommand(apiClient).execute();
+                    new DeleteBookingByIDCommand().execute();
                     break;
                 case 5:
                     exit = true;

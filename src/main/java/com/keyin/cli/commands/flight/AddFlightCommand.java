@@ -19,39 +19,39 @@ public class AddFlightCommand {
         System.out.println("===== Add Flight =====");
 
         Airport origin = null;
-        while (true){
-            try {
-                System.out.print("Enter id of origin airport: ");
-                long id = Long.parseLong(scanner.nextLine().trim());
-                origin = apiClient.getAirportbyID(id);
-                break;
-            }catch (Exception e){
-                System.out.println("Error:"+e.getMessage());
+        try {
+            System.out.print("Enter id of origin airport: ");
+            long id = Long.parseLong(scanner.nextLine().trim());
+            origin = apiClient.getAirportbyID(id);
+            if(origin == null){
+                System.out.print("No airport with id of "+id+" found");
             }
+        }catch (Exception e){
+            System.out.println("Error:"+e.getMessage());
         }
-        System.out.println(origin);
+
         Airport destination = null;
-        while (true){
-            try {
-                System.out.print("Enter id of destination airport: ");
-                long id = Long.parseLong(scanner.nextLine().trim());
-                destination = apiClient.getAirportbyID(id);
-                break;
-            }catch (Exception e){
-                System.out.println("Error: e.getMessage()");
+        try {
+            System.out.print("Enter id of destination airport: ");
+            long id = Long.parseLong(scanner.nextLine().trim());
+            destination = apiClient.getAirportbyID(id);
+            if(destination == null){
+                System.out.print("No airport with id of "+id+" found");
             }
+        }catch (Exception e){
+            System.out.println("Error: e.getMessage()");
         }
 
         Aircraft aircraft = null;
-        while (true){
-            try {
-                System.out.print("Enter id of the aircraft: ");
-                long id = Long.parseLong(scanner.nextLine().trim());
-                aircraft = apiClient.searchAircraftByID(id);
-                break;
-            }catch (Exception e){
-                System.out.println("Error: e.getMessage()");
+        try {
+            System.out.print("Enter id of the aircraft: ");
+            long id = Long.parseLong(scanner.nextLine().trim());
+            aircraft = apiClient.searchAircraftByID(id);
+            if(aircraft == null){
+                System.out.print("No aircraft with id of "+id+" found");
             }
+        }catch (Exception e){
+            System.out.println("Error: e.getMessage()");
         }
 
         System.out.print("Enter departure time in 'YYYY-MM-DDTHH:MM:SS' format: ");
