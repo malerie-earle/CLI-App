@@ -138,17 +138,4 @@ public class Flight {
                 '.';
     }
 
-    /* TO DO
-    public void assignRandomSeat() {
-        Random random = new Random();
-        while (true) {
-            int row = random.nextInt(aircraft.getRows());
-            int col = random.nextInt(aircraft.getColumns());
-            if (!seatOccupied[row][col]) {
-                seatOccupied[row][col] = true;
-                break;
-            }
-        }
-    }
-    */
 }

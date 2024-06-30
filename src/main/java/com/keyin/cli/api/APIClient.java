@@ -216,14 +216,7 @@ public class APIClient {
         String response = sendGetRequest("/flight/destination/" + destination_id);
         return Arrays.asList(objectMapper.readValue(response, Flight[].class));
     }
-    /*
-    public List<Flight> searchFlightByStatus(String status) throws IOException {
-        String response = sendGetRequest("/flight/status/" + status);
-        return Arrays.asList(objectMapper.readValue(response, Flight[].class));
-    }
-    */
 
-    //TO DO: THE API METHOD FOR THIS ONE
     public List<Flight> searchFlightByAircraft(long aircraft_ID) throws IOException {
         String response = sendGetRequest("/flight/aircraft/" + aircraft_ID);
         return Arrays.asList(objectMapper.readValue(response, Flight[].class));
@@ -235,7 +228,6 @@ public class APIClient {
     }
 
     // Booking API Calls
-    // check urls as different than others
     public List<Booking> getAllBookings() throws IOException {
         String response = sendGetRequest("/bookings");
         return Arrays.asList(objectMapper.readValue(response, Booking[].class));
@@ -291,17 +283,6 @@ public class APIClient {
         return objectMapper.readValue(response, Passenger.class);
     }
 
-    /*
-    public Booking bookFlight(long flightId, long passengerId, int row, int column) throws IOException {
-        //BookingRequest bookingRequest = new BookingRequest(flightId, passengerId);
-        Booking newBooking = new Booking(0, flightId, passengerId, row, column);
-        String jsonInputString = objectMapper.writeValueAsString(newBooking);
-        String response = sendPostRequest("/flight/book", jsonInputString);
-        return objectMapper.readValue(response, Booking.class);
-    }
-    */
-
-
     public Passenger updatePassenger(long passenger_ID, Passenger updatedPassenger) throws IOException {
         String jsonInputString = objectMapper.writeValueAsString(updatedPassenger);
         String response = sendPutRequest("/passenger/"+passenger_ID, jsonInputString);
@@ -318,7 +299,6 @@ public class APIClient {
     }
 
     public List<Passenger> searchPassengerByName(String name) throws IOException {
-//        String name = first_name + " " + last_name;
         String response = sendGetRequest("/passenger/"+name);
         return Arrays.asList(objectMapper.readValue(response, Passenger[].class));
     }
