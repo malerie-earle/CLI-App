@@ -111,6 +111,19 @@ public class Flight {
         ON_TIME, DELAYED, CANCELED
     }
 
+    public void displaySeatingChart(){
+        for(Booking[] row : bookings){
+            System.out.println();
+            for (Booking col : row){
+                if(col == null){
+                    System.out.print("[ ] ");
+                } else {
+                    System.out.print("[0] ");
+                }
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Flight - " +

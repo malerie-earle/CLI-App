@@ -111,7 +111,7 @@ public class APIClient {
         return Arrays.asList(objectMapper.readValue(response, Airport[].class));
     }
 
-    public Airport getAirportbyID(int id) throws IOException{
+    public Airport getAirportbyID(Long id) throws IOException{
         String response = sendGetRequest("/airport/"+id);
         return objectMapper.readValue(response,Airport.class);
     }
@@ -192,7 +192,7 @@ public class APIClient {
         return objectMapper.readValue(response, Flight.class);
     }
 
-    public Flight updateFlight(long flightId, String updatedFlight) throws IOException {
+    public Flight updateFlight(long flightId, Flight updatedFlight) throws IOException {
         String jsonInputString = objectMapper.writeValueAsString(updatedFlight);
         String response = sendPutRequest("/flight/"+flightId, jsonInputString);
         return objectMapper.readValue(response, Flight.class);
