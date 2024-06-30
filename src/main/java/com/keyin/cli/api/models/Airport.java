@@ -2,8 +2,8 @@ package com.keyin.cli.api.models;
 
 public class Airport {
     private long airport_ID;
-    private String code;
     private String name;
+    private String code;
     private String city;
     private String province;
 
@@ -11,7 +11,7 @@ public class Airport {
 
     }
 
-    public Airport(long airport_ID, String code, String name, String city, String province) {
+    public Airport(long airport_ID, String name, String code,  String city, String province) {
         this.airport_ID = airport_ID;
         this.code = code;
         this.name = name;
@@ -27,20 +27,20 @@ public class Airport {
         this.airport_ID = airport_ID;
     }
 
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public String getCity() {
