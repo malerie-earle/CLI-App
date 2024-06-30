@@ -2,6 +2,21 @@ SkyLogix Aerospace Management System - CLI App
 
 SkyLogix Aerospace Management System is designed to revolutionize the way aerospace operations are managed. Its primary purpose is to provide a centralized platform that enables efficient, safe, and streamlined management of all aerospace-related activities. Whether you're an airline, airport, or maintenance provider, SkyLogix offers comprehensive tools to manage flights, bookings, passengers, aircraft, and airports. The system is built to enhance operational efficiency, ensure regulatory compliance, and improve overall decision-making processes through real-time data insights and advanced analytics.
 
+Documentation
+- User manual including UML/Class diagrams
+- ERD Diagram
+- API Routes
+- Architecture Diagram
+
+Postman
+- All Postman scripts
+- JSON file of entire Postman collection
+- Screenshots of test names
+
+Demo Video & Project Links
+- Submitted by Janeil Carroll
+
+
 Menu Overview
 
 MAIN MENU 
