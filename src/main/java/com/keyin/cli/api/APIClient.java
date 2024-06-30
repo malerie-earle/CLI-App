@@ -16,7 +16,7 @@ public class APIClient {
     private static final String BASE_URL = "http://localhost:8080";
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
-    private String sendGetRequest(String endpoint) throws IOException {
+    public String sendGetRequest(String endpoint) throws IOException {
         URL url = new URL(BASE_URL + endpoint);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("GET");
@@ -36,7 +36,7 @@ public class APIClient {
         }
     }
 
-    private String sendPostRequest(String endpoint, String jsonInputString) throws IOException {
+    public String sendPostRequest(String endpoint, String jsonInputString) throws IOException {
         URL url = new URL(BASE_URL + endpoint);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
@@ -65,7 +65,7 @@ public class APIClient {
         }
     }
 
-    private String sendPutRequest(String endpoint, String jsonInputString) throws IOException {
+    public String sendPutRequest(String endpoint, String jsonInputString) throws IOException {
         URL url = new URL(BASE_URL + endpoint);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("PUT");
@@ -94,7 +94,7 @@ public class APIClient {
         }
     }
 
-    private void sendDeleteRequest(String endpoint) throws IOException {
+    public void sendDeleteRequest(String endpoint) throws IOException {
         URL url = new URL(BASE_URL + endpoint);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("DELETE");
