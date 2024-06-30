@@ -303,9 +303,5 @@ public class APIClient {
         return Arrays.asList(objectMapper.readValue(response, Passenger[].class));
     }
 
-    public List<SeatingChart> getAllSeatingCharts() throws IOException {
-        String response = sendGetRequest("/seating-charts");
-        return Arrays.asList(objectMapper.readValue(response, SeatingChart[].class));
-    }
 
 }
