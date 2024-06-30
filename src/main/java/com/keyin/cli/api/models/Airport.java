@@ -69,4 +69,23 @@ public class Airport {
                 ", Province: " + province +
                 '.';
     }
+
+    @Override
+    public boolean equals(Object o){
+        //  If we are comparing it to itself, we return true
+        if(o == this){
+            return true;
+        }
+        // If other object is not airport, we return false
+        if (!(o instanceof Airport)) {
+            return false;
+        }
+        // Else, we set the object/cast the object to be an airport, then compare attributes
+        Airport otherAirport = (Airport) o;
+
+        if(this.airport_ID != otherAirport.getAirport_ID() || this.name != otherAirport.getName() || this.code != otherAirport.code || !this.city.equals(otherAirport.getCity()) || this.province != otherAirport.province ){
+            return false;
+        }
+        return true;
+    }
 }
