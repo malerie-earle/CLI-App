@@ -52,11 +52,10 @@ public class Passenger {
 
     @Override
     public String toString() {
-        return "Passenger{" +
-                "passenger_ID=" + passenger_ID +
-                ", first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "Passenger - " +
+                "ID: " + passenger_ID +
+                ", Name: " + first_name + " " + last_name +
+                ", Email: " + email +
+                '.';
     }
 }

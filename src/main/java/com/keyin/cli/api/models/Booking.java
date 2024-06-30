@@ -58,4 +58,15 @@ public class Booking {
     public void setSeatColumn(int seatColumn) {
         this.seatColumn = seatColumn;
     }
+
+    @Override
+    public String toString() {
+        return "Bookings - " +
+                "ID: " + booking_ID +
+                ", Flight ID: " + flight_ID +
+                ", Passenger ID: " + passenger_ID+
+                ", Seat Row: " + seatRow +
+                ", Seat Column: " + seatColumn+
+                '.';
+    }
 }

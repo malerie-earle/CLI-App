@@ -69,13 +69,13 @@ public class SeatingChart {
 
     @Override
     public String toString() {
-        return "SeatingChart{" +
-                "id=" + id +
-                ", flightId=" + flightId +
-                ", seatRow=" + seatRow +
-                ", seatColumn=" + seatColumn +
-                ", isOccupied=" + isOccupied +
-                ", passengerId=" + passengerId +
-                '}';
+        return "Seating Chart - " +
+                "ID: " + id +
+                ", Flight ID: " + flightId +
+                ", Passenger ID: " + passengerId +
+                ", Seat Row: " + seatRow +
+                ", Seat Column: " + seatColumn +
+                ", Occupied: " + isOccupied +
+                '.';
     }
 }

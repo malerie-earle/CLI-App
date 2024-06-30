@@ -58,4 +58,15 @@ public class Airport {
     public void setProvince(String province) {
         this.province = province;
     }
+
+    @Override
+    public String toString() {
+        return "Airport - " +
+                "ID: " + airport_ID +
+                ", Name: " + name +
+                ", Code: " + code +
+                ", City: " + city +
+                ", Province: " + province +
+                '.';
+    }
 }

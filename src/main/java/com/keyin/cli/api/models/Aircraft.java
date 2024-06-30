@@ -132,15 +132,15 @@ public class Aircraft {
 
     @Override
     public String toString() {
-        return "Aircraft{" +
-                "aircraft_ID=" + aircraft_ID +
-                ", model='" + model + '\'' +
-                ", airline='" + airline + '\'' +
-                ", capacity=" + capacity +
-                ", rows=" + rows +
-                ", columns=" + columns +
-                ", numAisles=" + numAisles +
-                '}';
+        return "Aircraft - " +
+                "ID: " + aircraft_ID +
+                ", Model: " + model +
+                ", Airline: " + airline +
+                ", Capacity: " + capacity +
+                ", Rows: " + rows +
+                ", Columns: " + columns +
+                ", Number of Aisles: " + numAisles +
+                '.';
     }
 
     public static void main(String[] args) {
