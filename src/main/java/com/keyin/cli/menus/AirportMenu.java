@@ -1,12 +1,6 @@
 package com.keyin.cli.menus;
 
-import com.keyin.cli.commands.*;
-import com.keyin.cli.api.APIClient;
-import com.keyin.cli.commands.aircraft.SearchAircraftByIDCommand;
 import com.keyin.cli.commands.airport.*;
-import com.keyin.cli.commands.airport.AddAirportCommand;
-import com.keyin.cli.commands.airport.ViewAllAirportsCommand;
-
 import java.util.Scanner;
 
 public class AirportMenu {

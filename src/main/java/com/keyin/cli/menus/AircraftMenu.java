@@ -1,8 +1,16 @@
 package com.keyin.cli.menus;
 
-import com.keyin.cli.commands.*;
-import com.keyin.cli.api.APIClient;
+import com.keyin.cli.*;
 import com.keyin.cli.commands.aircraft.*;
+import com.keyin.cli.commands.flight.*;
+import com.keyin.cli.commands.passenger.*;
+import com.keyin.cli.commands.airport.*;
+import com.keyin.cli.commands.booking.*;
+import com.keyin.cli.api.models.*;
+import com.keyin.cli.api.APIClient;
+import com.keyin.cli.api.models.*;
+import java.util.List;
+
 
 import java.util.Scanner;
 
